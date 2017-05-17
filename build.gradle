@@ -1,0 +1,220 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            url 'https://geonet.artifactoryonline.com/geonet/public-releases'
+        }
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.5'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven() {
+        url "http://dl.bintray.com/serenity/maven/"
+    }
+}
+
+ext {
+    bintrayBaseUrl = 'https://api.bintray.com/maven'
+    bintrayRepository = 'maven'
+    bintrayPackage = 'serenity-cucumber'
+    projectDescription = 'Serenity Filter Chain'
+
+    if (!project.hasProperty("bintrayUsername")) {
+        bintrayUsername = 'wakaleo'
+    }
+    if (!project.hasProperty("bintrayApiKey")) {
+        bintrayApiKey = ''
+    }
+    serenityCoreVersion = '1.4.1-SNAPSHOT'
+    cucumberJVMVersion = '1.2.5'
+
+}
+
+group = 'net.serenity-bdd'
+
+
+task createNewVersionTag(type: Exec) {
+    executable "sh"
+    args "-c", "git tag -f -a v$version -m'release tag'"
+}
+
+task pushVersionTag(type: Exec, dependsOn: 'createNewVersionTag') {
+    executable "sh"
+    args "-c", "git push -f origin v$version"
+}
+
+task tagNewVersion() {
+    dependsOn pushVersionTag
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
+
+test {
+    include '**/When*'
+    exclude '**/*$*'
+    exclude '**/integration/**'
+    exclude '**/samples/**'
+    exclude '**/*Sample*'
+    maxParallelForks = Runtime.runtime.availableProcessors()
+}
+
+
+configurations.all {
+    resolutionStrategy {
+        // fail fast on dependency convergence problems
+        failOnVersionConflict()
+        force  'commons-collections:commons-collections:3.2.2',
+        "xml-apis:xml-apis:1.4.01",
+        "commons-codec:commons-codec:1.10"
+    }
+}
+
+dependencies {
+    compile ("net.serenity-bdd:serenity-core:${serenityCoreVersion}")
+    compile ("net.serenity-bdd:serenity-jira-plugin:1.1.3-SNAPSHOT")
+    compile ("net.serenity-bdd:serenity-cucumber:1.1.35-SNAPSHOT")
+    compile "info.cukes:cucumber-java:${cucumberJVMVersion}"
+    compile("info.cukes:cucumber-junit:${cucumberJVMVersion}") {
+            exclude group: "junit"
+}
+    compile "junit:junit:4.12"
+
+    testCompile ('ch.qos.logback:logback-classic:1.0.13') {
+        exclude module: "slf4j-api"
+    }
+    testCompile 'org.assertj:assertj-core:1.7.1'
+//    testCompile 'org.slf4j:slf4j-log4j12:1.7.21'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
+    testCompile("org.spockframework:spock-core:0.7-groovy-2.0") {
+        exclude group: "junit"
+        exclude module: "groovy-all"
+    }
+    testCompile("com.github.goldin:spock-extensions:0.1.4") {
+        exclude module: "spock-core"
+        exclude module: "slf4j-api"
+    }
+}
+
+jar {
+    manifest {
+        attributes("Implementation-Title": "Serenity Cucumber Plugin",
+                   "Implementation-Version": project.version.toString())
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar, javadocJar
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+
+            println "Publishing $project.name:$project.group:$project.version"
+
+            from components.java
+
+            artifact sourcesJar {
+                classifier "sources"
+            }
+
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+
+            pom.withXml {
+                asNode().children().last() + {
+                    resolveStrategy = Closure.DELEGATE_FIRST
+                    name 'serenity-cucumber'
+                    description 'Serenity Cucumber Integration'
+
+                    url 'https://github.com/serenity-bdd/serenity-cucumber'
+                    scm {
+                        url 'scm:git:git@github.com:ampie/serenity-cucumber.git'
+                        connection 'scm:git:git@github.com:ampie/serenity-cucumber.git'
+                        developerConnection 'scm:git:git@github.com:ampie/serenity-cucumber.git'
+                    }
+                    licenses {
+                        license {
+                            name 'The Apache Software License, Version 2.0'
+                            url 'http://www.apache.org/license/LICENSE-2.0.txt'
+                            distribution 'repo'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id 'cliviu'
+                            name 'Liviu Carausu'
+                            email 'liviu.carausu@gmail.com'
+                        }
+                        developer {
+                            id 'ampie'
+                            name 'Ampie Barnard'
+                            email 'ampie.private@gmail.com'
+                        }
+                    }
+                }
+                // Preserve compile-scope dependencies
+                asNode().dependencies.'*'.findAll() {
+                    it.scope.text() == 'runtime' && project.configurations.compile.allDependencies.find { dep ->
+                        dep.name == it.artifactId.text()
+                    }
+                }.each() {
+                    it.scope*.value = 'compile'
+                }
+            }
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:-options"
+}
+
+bintray {
+    user = bintrayUsername //this usually comes form gradle.properties file in ~/.gradle
+    key = bintrayApiKey //this usually comes form gradle.properties file in ~/.gradle
+    publications = ['mavenJava'] // see publications closure
+    pkg {
+        repo = 'maven'
+        userOrg = 'serenity'
+        name = 'serenity-filterchain'
+        desc = 'Serenity Filter Chain'
+        licenses = ['Apache-2.0']
+        labels = ['serenity','bdd','filter']
+    }
+}
+
+task copyDeps(type: Copy) {
+    from configurations.runtime + configurations.testCompile
+    into project.projectDir.path + "/lib"
+}
