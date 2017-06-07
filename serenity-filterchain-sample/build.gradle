@@ -1,0 +1,41 @@
+group 'net.serenity-bdd'
+
+import net.serenitybdd.cucumber.filterchain.OutputLinkConfig
+import net.serenitybdd.cucumber.filterchain.InputLinkConfig
+import net.serenitybdd.cucumber.filterchain.inputs.CucumberImporter
+import net.serenitybdd.cucumber.filterchain.outputs.AggregateHtmlOutput
+import net.serenitybdd.cucumber.filterchain.outputs.StandardSerenityOutput
+import net.serenitybdd.filterchain.gradle.*
+
+import java.nio.file.Paths
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies{
+        classpath('net.serenity-bdd:serenity-filterchain-gradle-plugin:0.0.1')
+        classpath('com.sbg.bdd:serenity-cucumber-adaptor:0.0.2')
+    }
+}
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'serenityFilterchain'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+serenityFilterchain {
+    inputs=[new InputLinkConfig('cucumber',CucumberImporter.name,Paths.get("${projectDir}/input/cucumber.json"))]
+    processors=[]
+    outputs=[new OutputLinkConfig('html2',StandardSerenityOutput.name,new File("${projectDir}/output/"), ['cucumber'])]
+    outputs=[new OutputLinkConfig('html1',AggregateHtmlOutput.name,new File("${projectDir}/output/"), ['cucumber'])]
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
