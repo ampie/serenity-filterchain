@@ -25,10 +25,13 @@ public class AggregateHtmlOutput implements OutputStrategy {
     public void writeTo(File outputDir, List<TestOutcome> outcomes) {
         HtmlAggregateStoryReporter reporter = new HtmlAggregateStoryReporter(projectName);
         reporter.setOutputDirectory(outputDir);
-        try {
-            reporter.generateReportsForTestResultsIn(TestOutcomes.of(outcomes));
-        } catch (IOException e) {
-            e.printStackTrace();
+        while (true) {
+            try {
+                reporter.generateReportsForTestResultsIn(TestOutcomes.of(outcomes));
+                break;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

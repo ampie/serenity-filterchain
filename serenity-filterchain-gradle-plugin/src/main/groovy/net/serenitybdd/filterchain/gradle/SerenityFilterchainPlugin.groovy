@@ -16,7 +16,10 @@ class SerenityFilterchainPlugin implements Plugin<Project> {
             description 'Generates complex aggregated Serenity reports'
             doLast {
                 println project.serenityFilterchain.outputs.size()
-                project.serenityFilterchain.buildLinks().each{it.write()}
+
+                def outputs = project.serenityFilterchain.buildLinks()
+                outputs.each{it.clean()}
+                outputs.each{it.write()}
             }
         }
     }

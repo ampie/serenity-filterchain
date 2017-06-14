@@ -1,6 +1,7 @@
 package net.serenitybdd.cucumber.filterchain;
 
 import net.thucydides.core.model.TestOutcome;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,6 +23,12 @@ public class OutputLink extends TestOutcomeLink<OutputStrategy> implements Recei
     public void write() {
         outputDirectory.mkdirs();
         getImplementation().writeTo(outputDirectory, retrieveInputOutcomes());
+    }
+    public void clean() {
+        try {
+            FileUtils.forceDelete(outputDirectory);
+        } catch (IOException e) {
+        }
     }
 
     public List<TestOutcome> retrieveInputOutcomes() {

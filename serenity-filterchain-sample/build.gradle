@@ -16,7 +16,7 @@ buildscript {
     }
     dependencies{
         classpath('net.serenity-bdd:serenity-filterchain-gradle-plugin:0.0.1')
-        classpath('com.sbg.bdd:serenity-cucumber-adaptor:0.0.2')
+        classpath('com.sbg.bdd:serenity-cucumber-adaptor:0.0.1')
     }
 }
 apply plugin: 'groovy'
@@ -29,10 +29,9 @@ repositories {
     mavenCentral()
 }
 serenityFilterchain {
-    inputs=[new InputLinkConfig('cucumber',CucumberImporter.name,Paths.get("${projectDir}/input/cucumber.json"))]
+    inputs=[new InputLinkConfig('cucumber',CucumberImporter.name,Paths.get("/home/ampie/Code/ampie/showcase/services/wildfly-microservice/cucumber.json"))]
     processors=[]
-    outputs=[new OutputLinkConfig('html2',StandardSerenityOutput.name,new File("${projectDir}/output/"), ['cucumber'])]
-    outputs=[new OutputLinkConfig('html1',AggregateHtmlOutput.name,new File("${projectDir}/output/"), ['cucumber'])]
+    outputs=[new OutputLinkConfig('html1',AggregateHtmlOutput.name,new File("${projectDir}/output/"), ['cucumber']),new OutputLinkConfig('html2',StandardSerenityOutput.name,new File("${projectDir}/output/"), ['cucumber'])]
 }
 
 dependencies {
