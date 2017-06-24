@@ -1,4 +1,4 @@
-package net.serenitybdd.cucumber.adaptor;
+package net.serenitybdd.cucumber.filterchain;
 
 import gherkin.formatter.model.Tag;
 import gherkin.formatter.model.TagStatement;

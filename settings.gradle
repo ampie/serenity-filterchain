@@ -2,4 +2,5 @@ rootProject.name = 'serenity-filterchain'
 include 'serenity-filterchain-core'
 include 'serenity-filterchain-gradle-plugin'
 //include 'serenity-filterchain-sample'
+include 'webdav-resource-impl'
 

@@ -17,15 +17,19 @@ class WhenUsingAFilterChain extends Specification {
 
         def outputLinkConfig = new OutputLinkConfig("output1", DummyOutputStrategy.class.getName(), new File("/does/not/exsit/either"), Arrays.asList("processor1"))
         filterChainConfig.setOutputs(Arrays.asList(outputLinkConfig))
+        def publishingLinkConfig = new PublishingLinkConfig("publisher1", DummyPublishingStrategy.class.getName(), "/does/not/exsit/anywhere", Arrays.asList("output1"))
+        filterChainConfig.setPublishers(Arrays.asList(publishingLinkConfig))
         when:
 
-        def outputs = filterChainConfig.buildLinks();
-
+        def outputs = filterChainConfig.buildLinks()
+        def publishers = filterChainConfig.publishingLinks
         then:
         outputs.size() == 1
         outputs[0].sources.size() == 1
         ((ProcessorLink)outputs[0].sources[0]).sources.size() == 1
         outputs[0].retrieveInputOutcomes()[0].title == "My Scenario Processed"
+        publishers.size() ==1
+        publishers[0].sources[0] == outputs[0]
     }
     def "should apply custom properties on strategies"() {
         given:
@@ -80,5 +84,6 @@ class WhenUsingAFilterChain extends Specification {
         outputs[0].retrieveInputOutcomes()[0].title == "My Scenario 1"
         outputs[0].retrieveInputOutcomes()[1].title == "My Scenario 2"
     }
+
 
 }

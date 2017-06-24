@@ -1,15 +1,5 @@
-apply plugin: 'groovy'
-apply plugin: 'java'
-
-sourceCompatibility = 1.7
-
-repositories {
-    mavenCentral()
-    mavenLocal()
-    jcenter()
-}
-
 dependencies {
+    compile 'com.sbg.bdd:common-resource-api:0.0.1'
     compile 'commons-beanutils:commons-beanutils:1.9.2'
     compile("net.serenity-bdd:serenity-core:${serenityCoreVersion}") {
         exclude(group: 'info.cukes')
@@ -20,6 +10,7 @@ dependencies {
     compile("net.serenity-bdd:serenity-cucumber:1.1.35-SNAPSHOT") {
         exclude(group: 'info.cukes')
     }
+    compile(project(':webdav-resource-impl'))
     compile("info.cukes:cucumber-java:${cucumberJVMVersion}") {
     }
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}"

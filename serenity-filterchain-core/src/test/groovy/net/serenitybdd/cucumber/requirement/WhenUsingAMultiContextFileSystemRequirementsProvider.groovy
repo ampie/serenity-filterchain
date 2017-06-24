@@ -1,7 +1,6 @@
 package net.serenitybdd.cucumber.requirement
 
-import net.serenitybdd.cucumber.adaptor.Contextualizer
-import net.serenitybdd.cucumber.requirement.MultiContextFileSystemTagProvider
+import net.serenitybdd.cucumber.filterchain.modifiers.Contextualizer
 import net.thucydides.core.model.Story
 import net.thucydides.core.model.TestOutcome
 import spock.lang.Specification

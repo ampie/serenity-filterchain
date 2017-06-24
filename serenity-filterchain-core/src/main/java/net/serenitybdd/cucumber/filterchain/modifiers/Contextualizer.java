@@ -1,10 +1,10 @@
-package net.serenitybdd.cucumber.adaptor;
+package net.serenitybdd.cucumber.filterchain.modifiers;
 
 import gherkin.formatter.model.Feature;
+import net.serenitybdd.cucumber.filterchain.CucumberTagName;
 import net.thucydides.core.model.Story;
 import net.thucydides.core.model.TestOutcome;
 import net.thucydides.core.model.TestTag;
-import net.thucydides.core.model.features.ApplicationFeature;
 
 import java.lang.reflect.Field;
 import java.util.*;

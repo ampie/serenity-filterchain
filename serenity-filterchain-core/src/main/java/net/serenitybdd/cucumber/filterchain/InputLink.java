@@ -5,7 +5,7 @@ import net.thucydides.core.model.TestOutcome;
 import java.nio.file.Path;
 import java.util.List;
 
-public class InputLink extends TestOutcomeLink<InputStrategy> implements  ProducingLink{
+public class InputLink extends TestOutcomeLink<InputStrategy> implements TestOutcomeProducingLink {
     private Path sourcePath;
     private List<TestOutcome> output;
 

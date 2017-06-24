@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OutputLink extends TestOutcomeLink<OutputStrategy> implements ReceivingLink {
-    private List<ProducingLink> sources = new ArrayList<>();
+    private List<TestOutcomeProducingLink> sources = new ArrayList<>();
     private File outputDirectory;
 
-    public List<ProducingLink> getSources() {
+    public List<TestOutcomeProducingLink> getSources() {
         return sources;
     }
 
@@ -24,6 +24,7 @@ public class OutputLink extends TestOutcomeLink<OutputStrategy> implements Recei
         outputDirectory.mkdirs();
         getImplementation().writeTo(outputDirectory, retrieveInputOutcomes());
     }
+
     public void clean() {
         try {
             FileUtils.forceDelete(outputDirectory);
@@ -33,14 +34,18 @@ public class OutputLink extends TestOutcomeLink<OutputStrategy> implements Recei
 
     public List<TestOutcome> retrieveInputOutcomes() {
         List<TestOutcome> inputs = new ArrayList<>();
-        for (ProducingLink input : this.sources) {
+        for (TestOutcomeProducingLink input : this.sources) {
             inputs.addAll(input.produce());
         }
         return inputs;
     }
     
     @Override
-    public void addSource(ProducingLink source) {
-        sources.add(source);
+    public void addSource(TestOutcomeLink source) {
+        sources.add((TestOutcomeProducingLink) source);
+    }
+
+    public File getOutputDirectory() {
+        return outputDirectory;
     }
 }

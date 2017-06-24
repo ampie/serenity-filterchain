@@ -3,7 +3,7 @@ package net.serenitybdd.cucumber.requirement;
 import com.google.common.base.Optional;
 import com.google.common.collect.Lists;
 import gherkin.formatter.model.Tag;
-import net.serenitybdd.cucumber.adaptor.Contextualizer;
+import net.serenitybdd.cucumber.filterchain.modifiers.Contextualizer;
 import net.thucydides.core.model.LastElement;
 import net.thucydides.core.model.TestOutcome;
 import net.thucydides.core.model.TestTag;
@@ -13,20 +13,18 @@ import net.thucydides.core.requirements.RequirementsTagProvider;
 import net.thucydides.core.requirements.model.FeatureType;
 import net.thucydides.core.requirements.model.Requirement;
 import net.thucydides.core.util.EnvironmentVariables;
-import net.thucydides.core.util.NameConverter;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.*;
 
 import static net.thucydides.core.util.NameConverter.humanize;
 
 /**
  * A RequirementsTagProvider that treats a story/feature that occurs in separate context as separate requirements with
- * the original story/feature being the parent requirement. Ideally use in conjunction with {@link net.serenitybdd.cucumber.adaptor.Contextualizer}
+ * the original story/feature being the parent requirement. Ideally use in conjunction with {@link Contextualizer}
  */
 public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTagProvider {
     private String parentRequirementName;

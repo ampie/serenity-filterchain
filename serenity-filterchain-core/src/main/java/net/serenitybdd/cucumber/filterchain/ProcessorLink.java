@@ -5,11 +5,11 @@ import net.thucydides.core.model.TestOutcome;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProcessorLink extends TestOutcomeLink<ProcessingStrategy> implements ReceivingLink, ProducingLink {
-    private List<ProducingLink> sources = new ArrayList<>();
+public class ProcessorLink extends TestOutcomeLink<ProcessingStrategy> implements ReceivingLink, TestOutcomeProducingLink {
+    private List<TestOutcomeProducingLink> sources = new ArrayList<>();
     private List<TestOutcome> output;
 
-    public List<ProducingLink> getSources() {
+    public List<TestOutcomeProducingLink> getSources() {
         return sources;
     }
 
@@ -23,7 +23,7 @@ public class ProcessorLink extends TestOutcomeLink<ProcessingStrategy> implement
 
     private List<TestOutcome> retrieveInputOutcomes() {
         List<TestOutcome> inputs = new ArrayList<>();
-        for (ProducingLink input : this.sources) {
+        for (TestOutcomeProducingLink input : this.sources) {
             inputs.addAll(input.produce());
         }
         return inputs;
@@ -31,7 +31,7 @@ public class ProcessorLink extends TestOutcomeLink<ProcessingStrategy> implement
     }
 
     @Override
-    public void addSource(ProducingLink source) {
-        sources.add(source);
+    public void addSource(TestOutcomeLink source) {
+        sources.add((TestOutcomeProducingLink) source);
     }
 }

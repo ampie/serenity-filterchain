@@ -1,6 +1,5 @@
 package net.serenitybdd.cucumber.filterchain.modifiers;
 
-import net.serenitybdd.cucumber.adaptor.Contextualizer;
 import net.thucydides.core.model.TestOutcome;
 
 public class ContextTaggingProcessor extends AbstractModifier {
