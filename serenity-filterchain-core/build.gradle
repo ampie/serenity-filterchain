@@ -1,5 +1,5 @@
 dependencies {
-    compile 'com.sbg.bdd:common-resource-api:0.0.1'
+    compile 'com.sbg.bdd:common-resource-api:0.0.5'
     compile 'commons-beanutils:commons-beanutils:1.9.2'
     compile("net.serenity-bdd:serenity-core:${serenityCoreVersion}") {
         exclude(group: 'info.cukes')

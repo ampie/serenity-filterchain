@@ -1,10 +1,12 @@
 package net.serenitybdd.filterchain.gradle
 
 import net.serenitybdd.cucumber.filterchain.InputLinkConfig
+import net.serenitybdd.cucumber.filterchain.LinkConfig
 import net.serenitybdd.cucumber.filterchain.OutputLinkConfig
 import net.serenitybdd.cucumber.filterchain.ProcessorLinkConfig
 import net.serenitybdd.cucumber.filterchain.PublishingLinkConfig
 import org.gradle.api.Project
+import org.gradle.util.ConfigureUtil
 
 class FilterChainConfig extends net.serenitybdd.cucumber.filterchain.FilterChainConfig {
     Project project
@@ -19,8 +21,16 @@ class FilterChainConfig extends net.serenitybdd.cucumber.filterchain.FilterChain
             inputs = new ArrayList<>();
         }
         inputs.add(config)
-        project.configure(config, closure)
+        configure(config, closure)
         return config;
+    }
+
+    private Object configure(LinkConfig config, Closure closure) {
+        if(project !=null) {
+            project.configure(config, closure)
+        }else{
+            ConfigureUtil.configure(closure, config)
+        }
     }
 
     ProcessorLinkConfig processor(Closure closure) {
@@ -29,7 +39,7 @@ class FilterChainConfig extends net.serenitybdd.cucumber.filterchain.FilterChain
             processors = new ArrayList<>();
         }
         processors.add(config)
-        project.configure(config, closure)
+        configure(config, closure)
         return config;
     }
     OutputLinkConfig output(Closure closure) {
@@ -38,7 +48,7 @@ class FilterChainConfig extends net.serenitybdd.cucumber.filterchain.FilterChain
             outputs = new ArrayList<>();
         }
         outputs.add(config)
-        project.configure(config, closure)
+        configure(config, closure)
         return config;
     }
     PublishingLinkConfig publisher(Closure closure) {
@@ -47,7 +57,7 @@ class FilterChainConfig extends net.serenitybdd.cucumber.filterchain.FilterChain
             publishers = new ArrayList<>();
         }
         publishers.add(config)
-        project.configure(config, closure)
+        configure(config, closure)
         return config;
     }
 

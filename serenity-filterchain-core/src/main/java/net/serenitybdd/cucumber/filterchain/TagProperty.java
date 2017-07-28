@@ -44,6 +44,16 @@ public enum TagProperty {
         public boolean isNull(TestTag tag) {
             return tag.getCompleteName() == null;
         }
+    }, COMPLETE_NAME_CONTAINS {
+        @Override
+        public boolean isExactMatch(TestTag tag, String value) {
+            return tag.getCompleteName().contains(value);
+        }
+
+        @Override
+        public boolean isNull(TestTag tag) {
+            return tag.getCompleteName() == null;
+        }
     };
 
     protected boolean isExactMatch(TestTag tag, String value) {

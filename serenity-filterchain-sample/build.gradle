@@ -1,5 +1,30 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven {
+            url 'http://nexus.standardbank.co.za:8090/nexus/content/groups/public/'
+        }
+        maven {
+            url 'http://nexus.standardbank.co.za:8090/nexus/content/groups/releases/'
+        }
+        jcenter()
+    }
+
+    dependencies {
+        classpath('net.serenity-bdd:serenity-filterchain-gradle-plugin:0.0.1')
+        classpath('net.serenity-bdd:webdav-resource-impl:0.0.1')
+        classpath('com.sbg.bdd:serenity-cucumber-adaptor:0.0.5')
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'serenityFilterchain'
+
 import net.serenitybdd.cucumber.filterchain.OutputLinkConfig
 import net.serenitybdd.cucumber.filterchain.InputLinkConfig
+import net.serenitybdd.cucumber.filterchain.modifiers.RequirementsTaggingProcessor
+import net.serenitybdd.cucumber.filterchain.modifiers.ContextTaggingProcessor
 import net.serenitybdd.cucumber.filterchain.publishers.WebDavPublishingStrategy
 import net.serenitybdd.cucumber.filterchain.inputs.CucumberImporter
 import net.serenitybdd.cucumber.filterchain.outputs.AggregateHtmlOutput
@@ -8,21 +33,6 @@ import net.serenitybdd.filterchain.gradle.*
 
 import java.nio.file.Paths
 
-buildscript {
-    repositories {
-        mavenLocal()
-        jcenter()
-    }
-    dependencies{
-        classpath('net.serenity-bdd:serenity-filterchain-gradle-plugin:0.0.1')
-        classpath('net.serenity-bdd:webdav-resource-impl:0.0.1')
-        classpath('com.sbg.bdd:serenity-cucumber-adaptor:0.0.1')
-    }
-}
-apply plugin: 'groovy'
-apply plugin: 'java'
-apply plugin: 'serenityFilterchain'
-
 sourceCompatibility = 1.7
 
 repositories {
@@ -30,37 +40,55 @@ repositories {
 }
 serenityFilterchain {
     input {
-        name='cucumber-android'
-        implementationClass=CucumberImporter.name
-        sourcePath=Paths.get("/home/ampie/Code/ampie/showcase/android/bdd_resources/output/cucumber.json")
+        name = 'cucumber-android'
+        implementationClass = CucumberImporter.name
+        sourcePath = Paths.get("/home/ampie/Code/card/card-output/cucumber.json")
     }
     input {
-        name='cucumber-service'
-        implementationClass=CucumberImporter.name
-        sourcePath=Paths.get("/home/ampie/Code/ampie/showcase/services/wildfly-microservice/output/cucumber.json")
+        name = 'cucumber-service'
+        implementationClass = CucumberImporter.name
+        sourcePath = Paths.get("/home/ampie/Code/card/card-output/cucumber.json")
+    }
+    processor {
+        sources = Arrays.asList('cucumber-service')
+        name = 'service-contextualizer'
+        implementationClass = ContextTaggingProcessor.name
+        properties = new Properties()
+        properties.setProperty('sourceContext', 'service')
+        properties.setProperty('scenarioStatus', 'wip')
+    }
+    processor {
+        sources = Arrays.asList('cucumber-android')
+        name = 'android-contextualizer'
+        implementationClass = ContextTaggingProcessor.name
+        properties = new Properties()
+        properties.setProperty('sourceContext', 'android')
+        properties.setProperty('scenarioStatus', 'wip')
+    }
+    processor {
+        sources = Arrays.asList('android-contextualizer','service-contextualizer')
+        name = 'requirements-tagger'
+        implementationClass = RequirementsTaggingProcessor.name
     }
     output {
-        name='html1'
+        name = 'html1'
         implementationClass = AggregateHtmlOutput.name
         outputDirectory = new File("${projectDir}/output/")
-        sources = Arrays.asList('cucumber-service','cucumber-android')
+        sources = Arrays.asList('requirements-tagger')
     }
     output {
-        name='html2'
+        name = 'html2'
         implementationClass = StandardSerenityOutput.name
         outputDirectory = new File("${projectDir}/output/")
-        sources = Arrays.asList('cucumber-service','cucumber-android')
+        sources = Arrays.asList('requirements-tagger')
     }
-    publisher {
-        name = 'webdav'
-        implementationClass = WebDavPublishingStrategy.name
-        destination = 'http://localhost:32123/webdav/'
-        properties = new Properties()
-        properties.setProperty('username', 'test')
-        properties.setProperty('password', 'test')
-        sources = Arrays.asList('html2')
-    }
-}
-
-dependencies {
+//    publisher {
+//        name = 'webdav'
+//        implementationClass = WebDavPublishingStrategy.name
+//        destination = 'http://localhost:8084/webdav/'
+//        properties = new Properties()
+//        properties.setProperty('username', 'test')
+//        properties.setProperty('password', 'test')
+//        sources = Arrays.asList('html1')
+//    }
 }

@@ -100,7 +100,7 @@ public class WebDavFolder extends WebDavResource implements ResourceContainer {
         if (children == null) {
             if (exists())
                 try {
-                    List<DavResource> list = getRoot().getSardine().search(getWebDavUrl(), "","*");
+                    List<DavResource> list = getRoot().getSardine().list(getWebDavUrl());
                     children = new HashMap<>();
                     for (DavResource davResource : list) {
                         String name = URLDecoder.decode(davResource.getName(), "UTF-8");

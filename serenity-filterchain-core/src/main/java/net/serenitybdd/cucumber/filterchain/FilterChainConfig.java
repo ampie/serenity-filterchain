@@ -34,10 +34,10 @@ public class FilterChainConfig {
     }
 
     public List<OutputLink> buildLinks() {
-        if(inputs == null){
+        if(inputs == null || inputs.isEmpty()){
             throw new IllegalStateException("No inputs configured!");
         }
-        if(outputs == null){
+        if(outputs == null || outputs.isEmpty()){
             throw new IllegalStateException("No outputs configured!");
         }
         for (LinkConfig<?> input : getConfigs(inputs, processors, outputs, publishers)) {

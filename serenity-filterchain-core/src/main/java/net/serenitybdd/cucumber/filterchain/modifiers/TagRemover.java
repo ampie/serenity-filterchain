@@ -13,6 +13,30 @@ public class TagRemover extends AbstractModifier {
     private String[] excludedTags = new String[0];
     private TagProperty tagProperty = TagProperty.COMPLETE_NAME;
 
+    public TagProperty getTagProperty() {
+        return tagProperty;
+    }
+
+    public void setTagProperty(TagProperty tagProperty) {
+        this.tagProperty = tagProperty;
+    }
+
+    public String[] getIncludedTags() {
+        return includedTags;
+    }
+
+    public void setIncludedTags(String[] includedTags) {
+        this.includedTags = includedTags;
+    }
+
+    public String[] getExcludedTags() {
+        return excludedTags;
+    }
+
+    public void setExcludedTags(String[] excludedTags) {
+        this.excludedTags = excludedTags;
+    }
+
     @Override
     protected TestOutcome modify(TestOutcome testOutcome) {
         Set<TestTag> newTags = new TreeSet<>();

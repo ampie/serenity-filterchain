@@ -53,7 +53,17 @@ public abstract class LinkConfig<T extends TestOutcomeLink> {
                     if (writeMethod != null && getProperties().containsKey(prop.getName())) {
                         Class<?> targetType = writeMethod.getParameterTypes()[0];
                         Converter converter = ConvertUtils.lookup(String.class, targetType);
-                        Object propValue = converter.convert(targetType, getProperties().getProperty(prop.getName()));
+                        Object propValue;
+                        if(converter==null){
+                            if( targetType.isEnum()){
+                                propValue=Enum.valueOf((Class<? extends Enum>) targetType,getProperties().getProperty(prop.getName()));
+                            }else{
+                                throw new IllegalStateException("No converter for type " + targetType.getName());
+                            }
+                        }else{
+                            propValue = converter.convert(targetType, getProperties().getProperty(prop.getName()));
+
+                        }
                         writeMethod.invoke(implementation, propValue);
                     }
                 }

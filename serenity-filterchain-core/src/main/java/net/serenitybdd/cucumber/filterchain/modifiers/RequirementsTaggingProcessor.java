@@ -17,6 +17,9 @@ public class RequirementsTaggingProcessor extends AbstractModifier {
         effectiveTags.addAll(testOutcome.getTags());
         TestOutcome result = testOutcome.withTags(null);
         effectiveTags.addAll(result.getTags());//Force reload of tags from tagProviders
+        if(result.getFeatureTag().isPresent()) {
+            effectiveTags.add(result.getFeatureTag().get());
+        }
         result.setTags(effectiveTags);
         return result;
     }

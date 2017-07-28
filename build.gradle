@@ -1,6 +1,9 @@
 buildscript {
     repositories {
         mavenLocal()
+//        maven {
+//            url 'http://nexus.standardbank.co.za:8090/nexus/content/groups/public/'
+//        }
         jcenter()
         maven {
             url "https://plugins.gradle.org/m2/"
@@ -25,7 +28,7 @@ repositories {
 }
 
 ext {
-    groovyVersion = '2.4.4'
+    groovyVersion = '2.4.10'
 
     projectDescription = 'Serenity Filter Chain'
     serenityCoreVersion = '1.4.1-SNAPSHOT'

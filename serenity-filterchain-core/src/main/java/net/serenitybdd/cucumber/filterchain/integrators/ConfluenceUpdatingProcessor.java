@@ -16,6 +16,7 @@ import java.util.Set;
 
 /**
  * Now wouldn't that be nice!!!
+ * WEBDAV may be the approach to go
  */
 public class ConfluenceUpdatingProcessor implements ProcessingStrategy {
 

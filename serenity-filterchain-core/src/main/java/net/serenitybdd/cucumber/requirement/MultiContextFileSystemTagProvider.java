@@ -9,6 +9,7 @@ import net.thucydides.core.model.TestOutcome;
 import net.thucydides.core.model.TestTag;
 import net.thucydides.core.requirements.AllRequirements;
 import net.thucydides.core.requirements.FileSystemRequirementsTagProvider;
+import net.thucydides.core.requirements.RequirementsList;
 import net.thucydides.core.requirements.RequirementsTagProvider;
 import net.thucydides.core.requirements.model.FeatureType;
 import net.thucydides.core.requirements.model.Requirement;
@@ -18,6 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.*;
 
 import static net.thucydides.core.util.NameConverter.humanize;
@@ -54,6 +56,22 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
         this.parentRequirementName = humanize(LastElement.of(path));
     }
 
+    @Override
+    public List<Requirement> getRequirements() {
+        //This will initialize the entire tree available in the feature/story files, but not the context-specific layer
+        List<Requirement> requirements = super.getRequirements();
+        if (level == 0 && requirementMap.isEmpty()) {
+            //Now add the entire tree to the requirementMap so that subsequent calls to getParentRequirement can use exactly
+            //the same instances
+            List<Requirement> list = RequirementsList.of(requirements).asFlattenedList();
+            for (Requirement requirement : list) {
+                requirementMap.put(keyFor(requirement), requirement);
+            }
+        }
+        return requirements;
+    }
+
+
     /**
      * Overridden because of inconsistency in the use of qualifiedName vs name here in Story.asTag() nad FileSystemTagProvider
      */
@@ -83,7 +101,6 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
                 Requirement parentRequirement = this.requirementMap.get(parentRequirementKey(testOutcome));
                 if (parentRequirement != null) {
                     result = Optional.of(createChildRequirementFor(parentRequirement, testOutcome));
-
                 }
             }
         }
@@ -112,15 +129,15 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
         path = path.substring(0, path.lastIndexOf('/'));
         String grandParentRequirementName = humanize(path.substring(path.lastIndexOf('/') + 1));
         String result = grandParentRequirementName + "/" + decontextualizedStoryName(testOutcome);
-        return result;
+        return result.toLowerCase();
     }
 
     private String requirementKey(TestOutcome testOutcome) {
-        return decontextualizedStoryName(testOutcome) + "/" + testOutcome.getUserStory().getName();
+        return (decontextualizedStoryName(testOutcome) + "/" + testOutcome.getUserStory().getName()).toLowerCase();
     }
 
     private String keyFor(Requirement child) {
-        return (StringUtils.isNotEmpty(child.getParent())) ? child.getParent() + "/" + child.getName() : child.getName();
+        return ((StringUtils.isNotEmpty(child.getParent())) ? child.getParent() + "/" + child.getName() : child.getName()).toLowerCase();
     }
 
     private String determineCardNumber(TestOutcome testOutcome, Requirement parentRequirement) {
@@ -144,10 +161,10 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
     protected List<Requirement> readChildrenFrom(File requirementDirectory) {
         String childDirectory = rootDirectory + "/" + requirementDirectory.getName();
         if (childrenExistFor(childDirectory)) {
-            RequirementsTagProvider childReader = new MultiContextFileSystemTagProvider(childDirectory, level + 1, environmentVariables, requirementTagMap, requirementMap);
+            MultiContextFileSystemTagProvider childReader = new MultiContextFileSystemTagProvider(childDirectory, level + 1, environmentVariables, requirementTagMap, requirementMap);
             return childReader.getRequirements();
         } else if (childrenExistFor(requirementDirectory.getPath())) {
-            RequirementsTagProvider childReader = new MultiContextFileSystemTagProvider(requirementDirectory.getPath(), level + 1, environmentVariables, requirementTagMap, requirementMap);
+            MultiContextFileSystemTagProvider childReader = new MultiContextFileSystemTagProvider(requirementDirectory.getPath(), level + 1, environmentVariables, requirementTagMap, requirementMap);
             return childReader.getRequirements();
         } else {
             return Lists.newArrayList();
@@ -166,7 +183,7 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
      */
     public Requirement readRequirementsFromStoryOrFeatureFile(File storyFile) {
         FeatureType type = featureTypeOf(storyFile);
-        Requirement requirement = super.readRequirementsFromStoryOrFeatureFile(storyFile).withParent(parentRequirementName);
+        Requirement requirement = super.readRequirementsFromStoryOrFeatureFile(storyFile);
         List<TestTag> tags = new ArrayList<TestTag>();
         if (type == FeatureType.FEATURE) {
             //TODO consider creating child requirements here. We are already parsing the file
@@ -184,7 +201,6 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
             //TODO support for jBehave
         }
         requirementTagMap.put(requirement.getFeatureFileName(), tags);
-        requirementMap.put(keyFor(requirement), requirement);
         return requirement;
 
     }

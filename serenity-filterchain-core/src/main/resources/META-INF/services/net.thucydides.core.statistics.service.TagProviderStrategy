@@ -1,1 +1,1 @@
-net.serenitybdd.cucumber.service.CucumberTagProviderStrategy
+net.serenitybdd.cucumber.requirement.MultiContextTagProviderStrategy

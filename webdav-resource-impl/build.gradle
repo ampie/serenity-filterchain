@@ -15,8 +15,8 @@ import com.bmuschko.gradle.docker.tasks.container.*
 
 dependencies {
     testCompile 'com.bmuschko:gradle-docker-plugin:3.0.7'
-    compile 'com.sbg.bdd:common-resource-api:0.0.1'
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile 'com.sbg.bdd:common-resource-api:0.0.4'
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     compile 'com.github.lookfirst:sardine:5.7'
     testCompile("org.spockframework:spock-core:0.7-groovy-2.0") {
         exclude group: "junit"
@@ -30,7 +30,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 task createWebDavContainer(type: DockerCreateContainer) {
-    imageId 'morrisjobke/webdav:latest'
+    imageId 'ampie/webdav:latest'
     portBindings = ['32123:80']
     env = ['USERNAME=test', 'PASSWORD=test']
 }

@@ -2,16 +2,20 @@
 dependencies {
     compile (project(':serenity-filterchain-core'))
     compile gradleApi()
-    compile localGroovy()
+    compile 'commons-io:commons-io:2.5'
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testCompile 'commons-io:commons-io:2.5'
     testCompile("org.spockframework:spock-core:0.7-groovy-2.0") {
         exclude group: "junit"
         exclude module: "groovy-all"
+        exclude module: "commons-io"
     }
     testCompile("com.github.goldin:spock-extensions:0.1.4") {
         exclude module: "spock-core"
         exclude module: "slf4j-api"
+        exclude module: "commons-io"
     }
 
+    testCompile 'com.sbg.bdd:serenity-cucumber-adaptor:0.0.5'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
