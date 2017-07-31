@@ -28,8 +28,7 @@ repositories {
 }
 
 ext {
-    groovyVersion = '2.4.10'
-
+    groovyVersion = '2.4.7'
     projectDescription = 'Serenity Filter Chain'
     serenityCoreVersion = '1.4.1-SNAPSHOT'
     cucumberJVMVersion = '1.2.5'

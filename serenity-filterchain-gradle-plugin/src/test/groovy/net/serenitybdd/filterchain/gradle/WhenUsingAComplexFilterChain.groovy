@@ -1,5 +1,6 @@
 package net.serenitybdd.filterchain.gradle
 
+import net.serenitybdd.cucumber.filterchain.OutputLink
 import net.serenitybdd.cucumber.filterchain.TagProperty
 import net.serenitybdd.cucumber.filterchain.inputs.CucumberImporter
 import net.serenitybdd.cucumber.filterchain.integrators.JiraUpdatingProcessor
@@ -115,12 +116,11 @@ class WhenUsingAComplexFilterChain  extends Specification{
             properties.setProperty('password', 'test')
         }
         when:
-        config.buildLinks().each {it ->
-//            it.clean()
-            it.write()
-        }
+        def outputs = config.buildLinks()
+        outputs.each{it.clean()}
+        outputs.each{it.write()}
         config.publishingLinks.each {it ->
-            it.publish()
+//            it.publish()
         }
         then:
         new File("${projectDir}/output/test-output").exists()
