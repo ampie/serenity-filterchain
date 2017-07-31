@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        mavenLocal()
+        //mavenLocal()
         maven {
             url 'http://nexus.standardbank.co.za:8090/nexus/content/groups/public/'
         }
