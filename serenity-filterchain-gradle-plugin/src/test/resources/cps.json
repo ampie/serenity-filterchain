@@ -1,0 +1,188 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "line": 12,
+        "name": "Successful pre limit authorisation",
+        "description": "",
+        "id": "enter-income-and-expenses;successful-pre-limit-authorisation",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12224336590,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 13,
+                "value": "#Belongs in ApplyForCreditLimitIncrease but put here to illustrate integration"
+              }
+            ],
+            "line": 14,
+            "name": "that Gavin has a credit card \u00275520578340384028\u0027 for which he qualifies for a pre-approved credit limit increase",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5520578340384028",
+                  "offset": 30
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.theCustomerWithTheCreditCardQualifiesForACreditLimitIncrease(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2018798737,
+              "status": "passed"
+            },
+            "children": [
+              {
+                "result": {
+                  "duration": 1651267423,
+                  "status": "passed"
+                },
+                "children": [
+                  {
+                    "embeddings": [
+                      {
+                        "data": "WyB7CiAgInNjb3BlUGF0aCIgOiAiMTcyLjk5LjAuNS84MDgwL1NlcnZpY2VBY2NlcHRhbmNlLzgvQ3JlZGl0TGltaXRJbmNyZWFzZXMvRW50ZXJfSW5jb21lX2FuZF9FeHBlbnNlcy9TdWNjZXNzZnVsX3ByZV9saW1pdF9hdXRob3Jpc2F0aW9uL0dhdmluIiwKICAic3RlcCIgOiAiV2hlbl9HYXZpbl9hdHRlbXB0c190by9zZW5kX2FfR0VUX3JlcXVlc3RfdG9fX3ByZWxpbWl0c192MV9fb2JyY19hY2NvdW50TnVtYmVyX2NicmNfX2FuZF9wYXJhbWV0ZXJfX19vYnJjX29yaWdfZXF1YWxzX1NCR01PX2NicmNfIiwKICAicmVxdWVzdCIgOiB7CiAgICAiYmFzZTY0Qm9keSIgOiAiIiwKICAgICJoZWFkZXJzIiA6IHsKICAgICAgIkFjY2VwdCIgOiAiKi8qIiwKICAgICAgIkNvbm5lY3Rpb24iIDogImtlZXAtYWxpdmUiLAogICAgICAiVXNlci1BZ2VudCIgOiAiQXBhY2hlLUh0dHBDbGllbnQvNC41LjEgKEphdmEvMS44LjBfMTMxKSIsCiAgICAgICJIb3N0IiA6ICIxNzIuOTkuMC41OjgwODAiLAogICAgICAiQWNjZXB0LUVuY29kaW5nIiA6ICJnemlwLGRlZmxhdGUiLAogICAgICAieC1zYmctc2VxdWVuY2UtbnVtYmVyIiA6ICIxIiwKICAgICAgIngtaWJtLWNsaWVudC1pZCIgOiAiZGYxOGYxZDAtM2M2Ny00YmRlLWJhOGEtNzdhMmU0YmQzMTIyIiwKICAgICAgIngtaWJtLWNsaWVudC1zZWNyZXQiIDogIndQN2VUOHZJMGZLNXFMM21XOG1NMmpUN3BNOHZEN2FLNHNDMXlMOGZQMmFDOG1KMXZYIiwKICAgICAgIngtc2JnLW1lc3NhZ2VUcmFjZUlkIiA6IFsgIjE3Mi45OS4wLjUvODA4MC9TZXJ2aWNlQWNjZXB0YW5jZS84L0NyZWRpdExpbWl0SW5jcmVhc2VzL0VudGVyX0luY29tZV9hbmRfRXhwZW5zZXMvU3VjY2Vzc2Z1bF9wcmVfbGltaXRfYXV0aG9yaXNhdGlvbi9HYXZpbiIsICIxNzIuOTkuMC41LzgwODAvU2VydmljZUFjY2VwdGFuY2UvOC9DcmVkaXRMaW1pdEluY3JlYXNlcy9FbnRlcl9JbmNvbWVfYW5kX0V4cGVuc2VzL1N1Y2Nlc3NmdWxfcHJlX2xpbWl0X2F1dGhvcmlzYXRpb24vR2F2aW4iIF0sCiAgICAgICJ4LW9yaWdpbmFsLXVybCIgOiAiaHR0cHM6Ly9hcGlnc2Euc3RhbmRhcmRiYW5rLmNvLnphOjU0NDMvY2FyZC9zaXQxL2NhcmQvbGltaXRzL3ByZWxpbWl0cy92MS81NTIwNTc4MzQwMzg0MDI4IiwKICAgICAgInguc2VydmljZS5pbnZvY2F0aW9uLmNvdW50cyIgOiAiaHR0cHM6R0VUOi8vYXBpZ3NhLnN0YW5kYXJkYmFuay5jby56YTo1NDQzL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOHwxIiwKICAgICAgImF1dG9tYXRpb24ucHJveHkudW5tYXBwZWQuZW5kcG9pbnRzIiA6ICJ0cnVlIiwKICAgICAgIkNvbnRlbnQtTGVuZ3RoIiA6ICIwIiwKICAgICAgIkNvbnRlbnQtVHlwZSIgOiAiYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOCIsCiAgICAgICJ4LXNiZy10b2tlbiIgOiAiYVhOemRXVmZkR2x0WlQwaU1qQXhOeTB3TnkweU9GUXhNVG8xT1RvMU1pSU5DbWx6YzNWbGNqMGlRejFUUVN3Z1UxUTlSMkYxZEdWdVp5d2dURDFLYjJoaGJtNWxjMkoxY21jc0lFODlVM1JoYm1SaGNtUmlZVzVyTENCUFZUMVRiMngxZEdsdmJpQkVaV3hwZG1WeWVTd2dRMDQ5UkdGMFlYQnZkMlZ5Vkc5clpXNVRaWEoyWlhJdWMzUmhibVJoY21SaVlXNXJMbU52TG5waElnMEtibTkwWDJGbWRHVnlQU0l5TURFM0xUQTNMVEk0VkRFeU9qQTBPalV5SWcwS2JtOTBYMkpsWm05eVpUMGlNakF4Tnkwd055MHlPRlF4TVRvMU9EbzFNaUlOQ25WelpYSnBaRDBpWjJGMmFXNHVkR1Z6ZEdsdVowQnphWFF4TG1OdmJTSU5DblZ1YVhGMVpVbHVaR1Z1ZEdsbWFXVnlQU0kwWW1RM056TTVaUzAxT1dZekxUUmhOREF0T1RZMVppMDNOVFUwT1RFMk1XUm1ZakVpRFFwemFXZHVZWFIxY21VOUltWmpPQ3M0ZFRZM2VWbEdaM1VyVm5Sb2JHTmxZVW96VmpKQ1ozRkxWV2xwWjFCcGIyc3hTSFprUjA1c1J6aGpSRXRpVERsc1VqWnllWFZPZVZOUk5qWXpWekZaU3pRM1dIUllPVEppTm5wSU1rMXZaRTVrU1ZwNVkwbDJNVUUwUWtwTFlYTnllbkpyTTNod1pGTnpXREJTVEd4bWFWSm9Sa1FyUlZCM2QycGhlRk5tTDI0eFZqSXdiMjl4UWpoc1NHWkRTRmRGTkZsNFNFeFhVVEowYW5VcmEwTTVkRlJ1VFhKdE1GSjBZVFpOTUdaWEwxTlRVemRSZWtwdWVWTlhNMlZHVW1oc1NXRXlUVGxEV1VKQ1VUSm1iVVpQTm1Kc00wOVZWMnhMYW1aUFZYaGhVV3BqZFdOTGVscFdNSEozTTBGV01TODRXVGh0SzNCM1ltb3ZiVTgyZEdnMGFGSXliV052YldkVlIwdExTMlkzY1c4MWVVcHROV3d5ZVZWSkswaHBhRVZxYm5CWE5uQnpaSE5PYW1wdE4yRldNMWcxYnpaUFR5czFiamRrSzI5RlFra3JaekpaZGxjNFZVaG5kMDl2YTBaUWR6MDlJZz09IgogICAgfSwKICAgICJkYXRlIiA6IDE1MDEyNDMxOTQ4NDQsCiAgICAibWV0aG9kIiA6ICJHRVQiLAogICAgInJlcXVlc3RlZFVybCIgOiAiL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOCIsCiAgICAic2VxdWVuY2VOdW1iZXIiIDogMSwKICAgICJjb29raWVzIiA6IHsgfSwKICAgICJjbGllbnRJcCIgOiAiMTcyLjk5LjAuMSIsCiAgICAiYWJzb2x1dGVVcmwiIDogImh0dHA6Ly8xNzIuOTkuMC41OjgwODAvY2FyZC9zaXQxL2NhcmQvbGltaXRzL3ByZWxpbWl0cy92MS81NTIwNTc4MzQwMzg0MDI4P29yaWc9U0JHTU8iLAogICAgInVybCIgOiAiL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOD9vcmlnPVNCR01PIiwKICAgICJhbGxIZWFkZXJLZXlzIiA6IFsgIkFjY2VwdCIsICJDb25uZWN0aW9uIiwgIlVzZXItQWdlbnQiLCAiSG9zdCIsICJBY2NlcHQtRW5jb2RpbmciLCAieC1zYmctc2VxdWVuY2UtbnVtYmVyIiwgIngtaWJtLWNsaWVudC1pZCIsICJ4LWlibS1jbGllbnQtc2VjcmV0IiwgIngtc2JnLW1lc3NhZ2VUcmFjZUlkIiwgIngtb3JpZ2luYWwtdXJsIiwgInguc2VydmljZS5pbnZvY2F0aW9uLmNvdW50cyIsICJhdXRvbWF0aW9uLnByb3h5LnVubWFwcGVkLmVuZHBvaW50cyIsICJDb250ZW50LUxlbmd0aCIsICJDb250ZW50LVR5cGUiLCAieC1zYmctdG9rZW4iIF0KICB9LAogICJyZXNwb25zZSIgOiB7CiAgICAiYmFzZTY0Qm9keSIgOiAiZXlKUWNtVk1hVzFwZEY5a1pYUmhhV3h6SWpwN0lsQnlaVXhwYldsMFgxQnlhVzFoY25sZlEyRnlaRjlPZFcxaVpYSWlPaUkxTlRJd05UYzRNelF3TXpnME1ESTRJaXdpVUhKbFRHbHRhWFJmUW1Gc1lXNWpaU0k2SWkweE5qTTJPRGN1TnpJaUxDSlFjbVZNYVcxcGRGOURkWEp5Wlc1MFgwTnlaV1JwZEY5TWFXMXBkQ0k2SWpFd01EQXdMakF3SWl3aVVISmxUR2x0YVhSZlJYTjBhVzFoZEdWa1gwZHliM056WDBsdVkyOXRaU0k2SWpFNE9UWTRMak0wSWl3aVVISmxUR2x0YVhSZlFuVnlaV0YxWDBOdmJXMGlPalkwT0RZc0lsQnlaVXhwYldsMFgwVnpkR2x0WVhSbFpGOUZlSEJsYm5ObGN5STZJakV5TlRRMkxqSTRJaXdpVUhKbFRHbHRhWFJmUlhOMGFXMWhkR1ZrWDFOMWNuQnNkWE1pT2lJMk5ESXlMakEzSWl3aVVISmxUR2x0YVhSZlJYTjBhVzFoZEdWa1gwRm1abDlNYVcxcGRDSTZJakl3TnpjeE1pNDFPU0lzSWxCeVpVeHBiV2wwWDAxaGVGOVNhWE5yWDB4cGJXbDBYMGx1WTNKbFlYTmxJam9pTkRnMU1EQXVNREFpTENKUWNtVk1hVzFwZEY5TmIyNTBhR3g1WDFObGNuWnBZMlZmUm1WbElqb2lOVFV1TURBaUxDSlFjbVZNYVcxcGRGOUZabVpmU1c1MFpYSmxjM1JmVW1GMFpTSTZJakF1TURBaUxDSlFjbVZNYVcxcGRGOUpibk4xY21GdVkyVmZUMjVmUVdOamIzVnVkQ0k2SWxsbGN5SXNJbEJ5WlV4cGJXbDBYMGx1YzNWeVlXNWpaVjlOYjI1MGFHeDVYMFpsWlNJNklqUXVNREFpTENKUWNtVk1hVzFwZEY5SmJuTjFjbUZ1WTJWZlVtRjBaU0k2SWpBdU16WTRJaXdpVUhKbFRHbHRhWFJmVEdWaFpGOUZlSEJwY25raU9qSXdNVGN3TXpJeExDSlFjbVZNYVcxcGRGOVFSQ0k2SWpNdU1EQWlMQ0pRY21WTWFXMXBkRjlCWm1admNtUmhZbWxzYVhSNVgwWmhZM1J2Y2lJNklqUXVOVEFpZlgwPSIsCiAgICAiaGVhZGVycyIgOiB7CiAgICAgICJYLUJhY2tzaWRlLVRyYW5zcG9ydCIgOiAiT0sgT0siLAogICAgICAiQ29ubmVjdGlvbiIgOiAiS2VlcC1BbGl2ZSIsCiAgICAgICJUcmFuc2Zlci1FbmNvZGluZyIgOiAiY2h1bmtlZCIsCiAgICAgICJDb250ZW50LVR5cGUiIDogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAiRGF0ZSIgOiAiRnJpLCAyOCBKdWwgMjAxNyAxMTo1OTo1NCBHTVQiLAogICAgICAiWC1HbG9iYWwtVHJhbnNhY3Rpb24tSUQiIDogIjI5NDI4Mjk5MyIsCiAgICAgICJVc2VyLUFnZW50IiA6ICJJQk0tQVBJQ29ubmVjdC81LjAiLAogICAgICAiU2VydmVyIiA6ICJJQk1fQ0lDU19UcmFuc2FjdGlvbl9TZXJ2ZXIvNS4zLjAoek9TKSIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1FeHBvc2UtSGVhZGVycyIgOiAiQVBJbS1EZWJ1Zy1UcmFucy1JZCwgWC1SYXRlTGltaXQtTGltaXQsIFgtUmF0ZUxpbWl0LVJlbWFpbmluZywgWC1SYXRlTGltaXQtUmVzZXQsIFgtR2xvYmFsLVRyYW5zYWN0aW9uLUlEIiwKICAgICAgIkFjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpbiIgOiAiKiIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1BbGxvdy1NZXRob2RzIiA6ICJHRVQiLAogICAgICAiQWNjZXNzLUNvbnRyb2wtQWxsb3ctQ3JlZGVudGlhbHMiIDogImZhbHNlIiwKICAgICAgIlgtUmF0ZUxpbWl0LUxpbWl0IiA6ICJuYW1lPXJhdGUtbGltaXQsMTAwOyIsCiAgICAgICJYLVJhdGVMaW1pdC1SZW1haW5pbmciIDogIm5hbWU9cmF0ZS1saW1pdCw5OTsiLAogICAgICAiQ29udGVudC1FbmNvZGluZyIgOiAiZ3ppcCIKICAgIH0sCiAgICAiZGF0ZSIgOiAxNTAxMjQzMTk0OTQ5LAogICAgInN0YXR1cyIgOiAyMDAKICB9LAogICJkdXJhdGlvbiIgOiAwLAogICJuZXN0ZWRFeGNoYW5nZXMiIDogWyBdCn0gXQ\u003d\u003d",
+                        "mime_type": "application/json"
+                      }
+                    ],
+                    "result": {
+                      "duration": 1599555921,
+                      "status": "passed"
+                    },
+                    "name": "send a GET request to /prelimits/v1/{accountNumber} and parameter: {orig\u003dSBGMO}",
+                    "match": {
+                      "arguments": [
+                        {
+                          "val": "/prelimits/v1/{accountNumber} and parameter: {orig\u003dSBGMO}"
+                        }
+                      ],
+                      "location": "GetTask Actor performAs"
+                    },
+                    "keyword": "performAs"
+                  }
+                ],
+                "name": "When Gavin attempts to ",
+                "match": {
+                  "arguments": [
+                    {
+                      "val": "When"
+                    },
+                    {
+                      "val": "Gavin"
+                    }
+                  ],
+                  "location": " void attemptsTo"
+                },
+                "keyword": "attemptsTo"
+              }
+            ],
+            "line": 15,
+            "name": "when he views the \u0027Card Overview\u0027 screen of the card",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.theCustomerRequestsThePreLimitIncreaseInformationForTheCard()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 173078445,
+              "status": "passed"
+            },
+            "children": [
+              {
+                "result": {
+                  "duration": 35313282,
+                  "status": "passed"
+                },
+                "children": [
+                  {
+                    "result": {
+                      "duration": 3958249,
+                      "status": "passed"
+                    },
+                    "name": "see that  he is approved for limit increase is \u003ctrue\u003e",
+                    "match": {
+                      "location": "QuestionConsequence void evaluateFor"
+                    },
+                    "keyword": "evaluateFor"
+                  },
+                  {
+                    "result": {
+                      "duration": 3485570,
+                      "status": "passed"
+                    },
+                    "name": "see that the maximimum risk limit increase is a value greater than \u003c1000.00\u003e",
+                    "match": {
+                      "location": "QuestionConsequence void evaluateFor"
+                    },
+                    "keyword": "evaluateFor"
+                  }
+                ],
+                "name": "Then Gavin should ",
+                "match": {
+                  "arguments": [
+                    {
+                      "val": "Then"
+                    },
+                    {
+                      "val": "Gavin"
+                    }
+                  ],
+                  "location": " void should"
+                },
+                "keyword": "should"
+              }
+            ],
+            "line": 16,
+            "name": "he is given the option to apply for a credit limit increase",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.thePreLimitIncreaseInformationShouldReflectTheRangeOfTheLimitIncreaseTheCustomerQualifiesFor()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 9,
+            "name": "@cps_wip"
+          },
+          {
+            "line": 10,
+            "name": "@service_wip"
+          },
+          {
+            "line": 11,
+            "name": "@dev"
+          }
+        ]
+      }
+    ],
+    "name": "Enter Income and Expenses",
+    "description": "As a KYC-ed Standard Bank Customer\nI would like to enter my income and expenses\nin order to know what credit limit increase I would qualify for if any",
+    "id": "enter-income-and-expenses",
+    "keyword": "Feature",
+    "uri": "CreditLimitIncreases/EnterIncomeAndExpenses.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@service_#PW-54460"
+      },
+      {
+        "line": 2,
+        "name": "@android_#PW-54461"
+      },
+      {
+        "line": 3,
+        "name": "@cps_#PW-54462"
+      }
+    ]
+  }
+]

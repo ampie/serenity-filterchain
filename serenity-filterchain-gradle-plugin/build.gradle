@@ -16,6 +16,6 @@ dependencies {
         exclude module: "commons-io"
     }
 
-    testCompile 'com.sbg.bdd:serenity-cucumber-adaptor:0.0.5'
+//    testCompile 'com.sbg.bdd:serenity-cucumber-adaptor:0.1.1'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

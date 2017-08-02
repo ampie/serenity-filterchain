@@ -4,9 +4,6 @@ buildscript {
         maven {
             url 'http://nexus.standardbank.co.za:8090/nexus/content/groups/public/'
         }
-        maven {
-            url 'http://nexus.standardbank.co.za:8090/nexus/content/groups/releases/'
-        }
         jcenter()
     }
 

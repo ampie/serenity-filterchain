@@ -18,6 +18,7 @@ import java.nio.file.Paths
 class WhenUsingAComplexFilterChain  extends Specification{
     def 'doit'(){
         given:
+        def srcTestResources=new File(Thread.currentThread().contextClassLoader.getResource("serenity-filterchain-gradle-plugin-marker.txt").file).parentFile
         System.setProperty(ThucydidesSystemProperty.THUCYDIDES_REQUIREMENTS_DIR.propertyName,"/home/ampie/Code/card/card-scenarios/features" )
         System.setProperty(ThucydidesSystemProperty.THUCYDIDES_REQUIREMENT_TYPES.propertyName,"capability,feature,low level feature" )
         def projectDir = "."
@@ -25,17 +26,17 @@ class WhenUsingAComplexFilterChain  extends Specification{
         config.input {
             name = 'cucumber-android'
             implementationClass = CucumberImporter.name
-            sourcePath = Paths.get("/home/ampie/Code/card/card-output/android.json")
+            sourcePath = Paths.get(srcTestResources.absolutePath, "android.json")
         }
         config.input {
             name = 'cucumber-service'
             implementationClass = CucumberImporter.name
-            sourcePath = Paths.get("/home/ampie/Code/card/card-output/service.json")
+            sourcePath = Paths.get(srcTestResources.absolutePath, "service.json")
         }
         config.input {
             name = 'cucumber-cps'
             implementationClass = CucumberImporter.name
-            sourcePath = Paths.get("/home/ampie/Code/card/card-output/cps.json")
+            sourcePath = Paths.get(srcTestResources.absolutePath, "cps.json")
         }
         config.processor {
             sources = Arrays.asList('cucumber-service')
