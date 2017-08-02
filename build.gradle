@@ -30,6 +30,7 @@ ext {
 }
 
 group = 'net.serenity-bdd'
+version = '0.0.2'
 
 allprojects {
     apply plugin: 'java'
@@ -37,8 +38,6 @@ allprojects {
     apply plugin: 'maven'
     apply plugin: 'maven-publish'
     apply plugin: 'maven-publish-auth'
-    group = 'net.serenity-bdd'
-    version = '0.0.1'
 }
 
 
@@ -65,7 +64,6 @@ subprojects {
     artifacts {
         archives sourcesJar, javadocJar
     }
-    version = '0.0.1'
     sourceCompatibility = 1.7
     targetCompatibility = 1.7
     task packageSources(type: Jar) {
@@ -84,9 +82,10 @@ subprojects {
         publications {
             mavenJava(MavenPublication) {
 
-                println "Publishing $project.name:$project.group:$project.version"
-                groupId 'net.serenity-bdd'
+                println "Publishing $project.name:$project.group:$rootProject.version"
+                groupId "$rootProject.group"
                 artifactId "$project.name"
+                version "$rootProject.version"
 
                 from components.java
 

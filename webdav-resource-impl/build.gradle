@@ -28,7 +28,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 task createWebDavContainer(type: DockerCreateContainer) {
-    imageId 'ampie/webdav:latest'
+    imageId 'docker.registry.standardbank.co.za/com.sbg.bdd/webdav:latest'
     portBindings = ['32123:80']
     env = ['USERNAME=test', 'PASSWORD=test']
 }
