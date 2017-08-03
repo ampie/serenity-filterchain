@@ -5,7 +5,7 @@ import spock.lang.Specification
 class WhenUsingWebDav extends Specification {
 
     public static
-    final String DOCKER_HOST = System.getProperty('docker.host.ip') == null ? 'localhost' : System.getProperty('docker.host.ip')
+    final String DOCKER_HOST = System.getProperty('docker.host.ip') == null ? '172.17.0.1' : System.getProperty('docker.host.ip')
 
     def 'should construct all folders when writing webdav resources'() {
         given:
