@@ -7,6 +7,8 @@ buildscript {
         classpath 'com.bmuschko:gradle-docker-plugin:3.0.7'
     }
 }
+
+import com.bmuschko.gradle.docker.tasks.image.DockerPullImage
 import com.bmuschko.gradle.docker.tasks.image.Dockerfile
 import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 import com.bmuschko.gradle.docker.tasks.container.*
@@ -27,7 +29,12 @@ dependencies {
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+task pullWebDavImage(type: DockerPullImage) {
+    repository 'docker.registry.standardbank.co.za/com.sbg.bdd/webdav'
+    tag 'latest'
+}
 task createWebDavContainer(type: DockerCreateContainer) {
+    dependsOn pullWebDavImage
     imageId 'docker.registry.standardbank.co.za/com.sbg.bdd/webdav:latest'
     portBindings = ['32123:80']
     env = ['USERNAME=test', 'PASSWORD=test']
