@@ -3,10 +3,14 @@ package net.serenitybdd.filterchain.webdav
 import spock.lang.Specification
 
 class WhenUsingWebDav extends Specification {
+
+    public static
+    final String DOCKER_HOST = System.getProperty('docker.host.ip') == null ? 'localhost' : System.getProperty('docker.host.ip')
+
     def 'should construct all folders when writing webdav resources'() {
         given:
         def uid = UUID.randomUUID().toString()
-        def root = new WebDavRoot('root', new WebDavConfig('http://localhost:32123/webdav/', 'test', 'test'))
+        def root = new WebDavRoot('root', new WebDavConfig('http://' + DOCKER_HOST + ':32123/webdav/', 'test', 'test'))
 //        root.sardine.delete('http://localhost:32123/webdav/')
         def newDir = root.resolvePotentialContainer(uid)
         root.resolvePotential(uid + '/dir/myfile.txt').write('hello webdav'.bytes)
@@ -16,10 +20,11 @@ class WhenUsingWebDav extends Specification {
         list.length == 1
         list[0].name == 'dir'
     }
+
     def 'should support webdav resources with encoded names'() {
         given:
         def uid = UUID.randomUUID().toString()
-        def root = new WebDavRoot('root', new WebDavConfig('http://localhost:32123/webdav/', 'test', 'test'))
+        def root = new WebDavRoot('root', new WebDavConfig('http://' + DOCKER_HOST + ':32123/webdav/', 'test', 'test'))
         def newDir = root.resolvePotentialContainer(uid)
         root.resolvePotential(uid + '/some dir/my # file.txt').write('hello webdav'.bytes)
         when:
@@ -32,7 +37,7 @@ class WhenUsingWebDav extends Specification {
     def 'should read webdav resources'() {
         given:
         def uid = UUID.randomUUID().toString()
-        def root = new WebDavRoot('root', new WebDavConfig('http://localhost:32123/webdav/', 'test', 'test'))
+        def root = new WebDavRoot('root', new WebDavConfig('http://' + DOCKER_HOST + ':32123/webdav/', 'test', 'test'))
         def newDir = root.resolvePotentialContainer(uid)
         root.resolvePotential(uid + '/dir/myfile.txt').write('hello webdav'.bytes)
 
