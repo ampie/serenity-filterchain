@@ -106,18 +106,22 @@ public class Contextualizer {
         return issues;
     }
 
-    public String decontextualizePath(String qualifier, String path) {
+    public String decontextualizePath(String context, String path) {
         if (path != null && path.indexOf('.') > 0) {
-            String s = path.substring(0, path.lastIndexOf('.') - (qualifier.length() + 2)) + path.substring(path.lastIndexOf('.'));
+            String s = path.substring(0, path.lastIndexOf('.') - (context.length() + 2)) + path.substring(path.lastIndexOf('.'));
             return s;
         } else {
-            return decontextualizeName(qualifier, path);
+            return decontextualizeName(context, path);
         }
 
     }
 
-    public String decontextualizeName(String qualifier, String name) {
-        return name.substring(0, name.length() - (qualifier.length() + 3));
+    public String decontextualizeName(String context, String name) {
+        if(context==null){
+            return name;
+        }else {
+            return name.substring(0, name.length() - (context.length() + 3));
+        }
     }
 
     public void setContext(String ctx) {
