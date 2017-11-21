@@ -30,7 +30,7 @@ ext {
 }
 
 group = 'net.serenity-bdd'
-version = '0.0.3'
+version = '0.0.4'
 
 allprojects {
     apply plugin: 'java'

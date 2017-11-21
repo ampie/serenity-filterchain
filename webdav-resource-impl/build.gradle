@@ -15,7 +15,7 @@ import com.bmuschko.gradle.docker.tasks.container.*
 
 dependencies {
     testCompile 'com.bmuschko:gradle-docker-plugin:3.0.7'
-    compile 'com.sbg.bdd:common-resource-api:0.1.1'
+    compile 'com.sbg.bdd:common-resource-api:0.2.5'
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     compile 'com.github.lookfirst:sardine:5.7'
     testCompile("org.spockframework:spock-core:0.7-groovy-2.0") {
