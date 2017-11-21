@@ -1,0 +1,713 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 9,
+        "name": "Successful pre limit authorisation",
+        "description": "",
+        "id": "apply-for-credit-limit-increase;successful-pre-limit-authorisation",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1058880973,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "that Gavin has a credit card 5520578340384028 that qualifies for a credit limit increase",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Gavin",
+                  "offset": 5
+                },
+                {
+                  "val": "5520578340384028",
+                  "offset": 29
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.thatGavinHasACreditCardThatQualifiesForACreditLimitIncrease(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 742578607,
+              "status": "passed"
+            },
+            "children": [
+              {
+                "result": {
+                  "duration": 612050607,
+                  "status": "passed"
+                },
+                "children": [
+                  {
+                    "embeddings": [
+                      {
+                        "data": "WyB7CiAgInNjb3BlUGF0aCIgOiAiMTcyLjk5LjAuNS84MDgwL2Nwc193aXAvMTIvQ3JlZGl0TGltaXRJbmNyZWFzZXMvQXBwbHlfZm9yX0NyZWRpdF9MaW1pdF9JbmNyZWFzZS9TdWNjZXNzZnVsX3ByZV9saW1pdF9hdXRob3Jpc2F0aW9uL0dhdmluIiwKICAic3RlcCIgOiAiV2hlbl9HYXZpbl9hdHRlbXB0c190by9zZW5kX2FfR0VUX3JlcXVlc3RfdG9fX3ByZWxpbWl0c192MV9fb2JyY19hY2NvdW50TnVtYmVyX2NicmNfX2FuZF9wYXJhbWV0ZXJfX19vYnJjX29yaWdfZXF1YWxzX1NCR01PX2NicmNfIiwKICAicmVxdWVzdCIgOiB7CiAgICAiYmFzZTY0Qm9keSIgOiAiIiwKICAgICJoZWFkZXJzIiA6IHsKICAgICAgIkFjY2VwdCIgOiAiKi8qIiwKICAgICAgIkNvbm5lY3Rpb24iIDogImtlZXAtYWxpdmUiLAogICAgICAiVXNlci1BZ2VudCIgOiAiQXBhY2hlLUh0dHBDbGllbnQvNC41LjEgKEphdmEvMS44LjBfMTMxKSIsCiAgICAgICJIb3N0IiA6ICIxNzIuOTkuMC41OjgwODAiLAogICAgICAiQWNjZXB0LUVuY29kaW5nIiA6ICJnemlwLGRlZmxhdGUiLAogICAgICAieC1zYmctc2VxdWVuY2UtbnVtYmVyIiA6ICIxIiwKICAgICAgIngtaWJtLWNsaWVudC1pZCIgOiAiZGYxOGYxZDAtM2M2Ny00YmRlLWJhOGEtNzdhMmU0YmQzMTIyIiwKICAgICAgIngtaWJtLWNsaWVudC1zZWNyZXQiIDogIndQN2VUOHZJMGZLNXFMM21XOG1NMmpUN3BNOHZEN2FLNHNDMXlMOGZQMmFDOG1KMXZYIiwKICAgICAgIngtc2JnLW1lc3NhZ2VUcmFjZUlkIiA6IFsgIjE3Mi45OS4wLjUvODA4MC9jcHNfd2lwLzEyL0NyZWRpdExpbWl0SW5jcmVhc2VzL0FwcGx5X2Zvcl9DcmVkaXRfTGltaXRfSW5jcmVhc2UvU3VjY2Vzc2Z1bF9wcmVfbGltaXRfYXV0aG9yaXNhdGlvbi9HYXZpbiIsICIxNzIuOTkuMC41LzgwODAvY3BzX3dpcC8xMi9DcmVkaXRMaW1pdEluY3JlYXNlcy9BcHBseV9mb3JfQ3JlZGl0X0xpbWl0X0luY3JlYXNlL1N1Y2Nlc3NmdWxfcHJlX2xpbWl0X2F1dGhvcmlzYXRpb24vR2F2aW4iIF0sCiAgICAgICJ4LW9yaWdpbmFsLXVybCIgOiAiaHR0cHM6Ly9hcGlnc2Euc3RhbmRhcmRiYW5rLmNvLnphOjU0NDMvY2FyZC9zaXQxL2NhcmQvbGltaXRzL3ByZWxpbWl0cy92MS81NTIwNTc4MzQwMzg0MDI4IiwKICAgICAgInguc2VydmljZS5pbnZvY2F0aW9uLmNvdW50cyIgOiAiaHR0cHM6R0VUOi8vYXBpZ3NhLnN0YW5kYXJkYmFuay5jby56YTo1NDQzL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOHwxIiwKICAgICAgImF1dG9tYXRpb24ucHJveHkudW5tYXBwZWQuZW5kcG9pbnRzIiA6ICJ0cnVlIiwKICAgICAgIkNvbnRlbnQtTGVuZ3RoIiA6ICIwIiwKICAgICAgIkNvbnRlbnQtVHlwZSIgOiAiYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOCIsCiAgICAgICJ4LXNiZy10b2tlbiIgOiAiYVhOemRXVmZkR2x0WlQwaU1qQXhOeTB3T0MweE1WUXhNam8wTURvd09TSU5DbWx6YzNWbGNqMGlRejFUUVN3Z1UxUTlSMkYxZEdWdVp5d2dURDFLYjJoaGJtNWxjMkoxY21jc0lFODlVM1JoYm1SaGNtUmlZVzVyTENCUFZUMVRiMngxZEdsdmJpQkVaV3hwZG1WeWVTd2dRMDQ5UkdGMFlYQnZkMlZ5Vkc5clpXNVRaWEoyWlhJdWMzUmhibVJoY21SaVlXNXJMbU52TG5waElnMEtibTkwWDJGbWRHVnlQU0l5TURFM0xUQTRMVEV4VkRFeU9qUTFPakE1SWcwS2JtOTBYMkpsWm05eVpUMGlNakF4Tnkwd09DMHhNVlF4TWpvek9Ub3dPU0lOQ25WelpYSnBaRDBpWjJGMmFXNHVkR1Z6ZEdsdVowQnphWFF4TG1OdmJTSU5DblZ1YVhGMVpVbHVaR1Z1ZEdsbWFXVnlQU0ptTnpsallqaGxZeTAwTURrNUxUUTBPV1V0T0dZeU1pMDRZbVZrWVRRME1EUmtNamtpRFFwemFXZHVZWFIxY21VOUlsRldablp1YWpGV2JrSnZXakY0TVdSSVVHTTRiemxhWkc5QmNtZDNlRTQ0YmpoVlRUTjJMMGxzZVhwRlRYZzJlbTFpSzJ0R2VqZDNaakY1Y3pob05pdDFRMUJVVmpKd2QyRm5TWEF4UWxKdFJITlBjSGhVYldoTVQzWXJOak5qTUVOWmNWZFlOelprYVVFd05YVXdPV3hOVjI1NVMycFZOaTh5T1hoMUt6RmhXRUZ1VDBaYWVYWkxNWEpqTTJ4UlFXbzVVMVpVVVhNeVVWSlNjbEpIUWtVd01qVndkRGRRT1dOYVpURjNUSEk1UkVsQ01GbzJTUzlGUWtGdGJXZExWVEp4Tm5OWVJXNW1OR2hhTWtaSFltZFRUaTgzUlU1bGNWbHdlVU41YVM5VFZXWlJVMHBrVHk5VFYwSllaMWRhYUU5VU1reFhjbkZ5Y0ZGMlVUQkxUMUpYV1U0eU1uVXlVblF6TldRclVXRXZTMVJ4ZEc1clZsUlRTRk5NTWpVd1JuRlBNVU5qZGpoWlpXZHpibkYxYW5aQlVpODFNRFJFZFRSalpteDZLM0JaVFRCdlJXNUViWFJKTjBwdGVtZGlVM2RUWVV4eVVUMDlJZz09IgogICAgfSwKICAgICJkYXRlIiA6IDE1MDI0NTUyMDk4ODEsCiAgICAibWV0aG9kIiA6ICJHRVQiLAogICAgInJlcXVlc3RlZFVybCIgOiAiL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOCIsCiAgICAic2VxdWVuY2VOdW1iZXIiIDogMSwKICAgICJjb29raWVzIiA6IHsgfSwKICAgICJjbGllbnRJcCIgOiAiMTcyLjk5LjAuMSIsCiAgICAiYWJzb2x1dGVVcmwiIDogImh0dHA6Ly8xNzIuOTkuMC41OjgwODAvY2FyZC9zaXQxL2NhcmQvbGltaXRzL3ByZWxpbWl0cy92MS81NTIwNTc4MzQwMzg0MDI4P29yaWc9U0JHTU8iLAogICAgInVybCIgOiAiL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOD9vcmlnPVNCR01PIiwKICAgICJhbGxIZWFkZXJLZXlzIiA6IFsgIkFjY2VwdCIsICJDb25uZWN0aW9uIiwgIlVzZXItQWdlbnQiLCAiSG9zdCIsICJBY2NlcHQtRW5jb2RpbmciLCAieC1zYmctc2VxdWVuY2UtbnVtYmVyIiwgIngtaWJtLWNsaWVudC1pZCIsICJ4LWlibS1jbGllbnQtc2VjcmV0IiwgIngtc2JnLW1lc3NhZ2VUcmFjZUlkIiwgIngtb3JpZ2luYWwtdXJsIiwgInguc2VydmljZS5pbnZvY2F0aW9uLmNvdW50cyIsICJhdXRvbWF0aW9uLnByb3h5LnVubWFwcGVkLmVuZHBvaW50cyIsICJDb250ZW50LUxlbmd0aCIsICJDb250ZW50LVR5cGUiLCAieC1zYmctdG9rZW4iIF0KICB9LAogICJyZXNwb25zZSIgOiB7CiAgICAiYmFzZTY0Qm9keSIgOiAiZXlKUWNtVk1hVzFwZEY5a1pYUmhhV3h6SWpwN0lsQnlaVXhwYldsMFgxQnlhVzFoY25sZlEyRnlaRjlPZFcxaVpYSWlPaUkxTlRJd05UYzRNelF3TXpnME1ESTRJaXdpVUhKbFRHbHRhWFJmUW1Gc1lXNWpaU0k2SWkweE5qTTJPRGN1TnpJaUxDSlFjbVZNYVcxcGRGOURkWEp5Wlc1MFgwTnlaV1JwZEY5TWFXMXBkQ0k2SWpFd01EQXdMakF3SWl3aVVISmxUR2x0YVhSZlJYTjBhVzFoZEdWa1gwZHliM056WDBsdVkyOXRaU0k2SWpFNE9UWTRMak0wSWl3aVVISmxUR2x0YVhSZlFuVnlaV0YxWDBOdmJXMGlPalkwT0RZc0lsQnlaVXhwYldsMFgwVnpkR2x0WVhSbFpGOUZlSEJsYm5ObGN5STZJakV5TlRRMkxqSTRJaXdpVUhKbFRHbHRhWFJmUlhOMGFXMWhkR1ZrWDFOMWNuQnNkWE1pT2lJMk5ESXlMakEzSWl3aVVISmxUR2x0YVhSZlJYTjBhVzFoZEdWa1gwRm1abDlNYVcxcGRDSTZJakl3TnpjeE1pNDFPU0lzSWxCeVpVeHBiV2wwWDAxaGVGOVNhWE5yWDB4cGJXbDBYMGx1WTNKbFlYTmxJam9pTkRnMU1EQXVNREFpTENKUWNtVk1hVzFwZEY5TmIyNTBhR3g1WDFObGNuWnBZMlZmUm1WbElqb2lOVFV1TURBaUxDSlFjbVZNYVcxcGRGOUZabVpmU1c1MFpYSmxjM1JmVW1GMFpTSTZJakF1TURBaUxDSlFjbVZNYVcxcGRGOUpibk4xY21GdVkyVmZUMjVmUVdOamIzVnVkQ0k2SWxsbGN5SXNJbEJ5WlV4cGJXbDBYMGx1YzNWeVlXNWpaVjlOYjI1MGFHeDVYMFpsWlNJNklqUXVNREFpTENKUWNtVk1hVzFwZEY5SmJuTjFjbUZ1WTJWZlVtRjBaU0k2SWpBdU16WTRJaXdpVUhKbFRHbHRhWFJmVEdWaFpGOUZlSEJwY25raU9qSXdNVGN3TXpJeExDSlFjbVZNYVcxcGRGOVFSQ0k2SWpNdU1EQWlMQ0pRY21WTWFXMXBkRjlCWm1admNtUmhZbWxzYVhSNVgwWmhZM1J2Y2lJNklqUXVOVEFpZlgwPSIsCiAgICAiaGVhZGVycyIgOiB7CiAgICAgICJYLUJhY2tzaWRlLVRyYW5zcG9ydCIgOiAiT0sgT0siLAogICAgICAiQ29ubmVjdGlvbiIgOiAiS2VlcC1BbGl2ZSIsCiAgICAgICJUcmFuc2Zlci1FbmNvZGluZyIgOiAiY2h1bmtlZCIsCiAgICAgICJDb250ZW50LVR5cGUiIDogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAiRGF0ZSIgOiAiRnJpLCAxMSBBdWcgMjAxNyAxMjo0MDowOSBHTVQiLAogICAgICAiWC1HbG9iYWwtVHJhbnNhY3Rpb24tSUQiIDogIjM4NDI3NDg3MSIsCiAgICAgICJVc2VyLUFnZW50IiA6ICJJQk0tQVBJQ29ubmVjdC81LjAiLAogICAgICAiU2VydmVyIiA6ICJJQk1fQ0lDU19UcmFuc2FjdGlvbl9TZXJ2ZXIvNS4zLjAoek9TKSIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1FeHBvc2UtSGVhZGVycyIgOiAiQVBJbS1EZWJ1Zy1UcmFucy1JZCwgWC1SYXRlTGltaXQtTGltaXQsIFgtUmF0ZUxpbWl0LVJlbWFpbmluZywgWC1SYXRlTGltaXQtUmVzZXQsIFgtR2xvYmFsLVRyYW5zYWN0aW9uLUlEIiwKICAgICAgIkFjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpbiIgOiAiKiIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1BbGxvdy1NZXRob2RzIiA6ICJHRVQiLAogICAgICAiQWNjZXNzLUNvbnRyb2wtQWxsb3ctQ3JlZGVudGlhbHMiIDogImZhbHNlIiwKICAgICAgIlgtUmF0ZUxpbWl0LUxpbWl0IiA6ICJuYW1lPXJhdGUtbGltaXQsMTAwOyIsCiAgICAgICJYLVJhdGVMaW1pdC1SZW1haW5pbmciIDogIm5hbWU9cmF0ZS1saW1pdCw5OTsiLAogICAgICAiQ29udGVudC1FbmNvZGluZyIgOiAiZ3ppcCIKICAgIH0sCiAgICAiZGF0ZSIgOiAxNTAyNDU1MjA5OTQzLAogICAgInN0YXR1cyIgOiAyMDAKICB9LAogICJkdXJhdGlvbiIgOiAwLAogICJuZXN0ZWRFeGNoYW5nZXMiIDogWyBdCn0gXQ\u003d\u003d",
+                        "mime_type": "application/json"
+                      }
+                    ],
+                    "result": {
+                      "duration": 553018752,
+                      "status": "passed"
+                    },
+                    "name": "send a GET request to /prelimits/v1/{accountNumber} and parameter: {orig\u003dSBGMO}",
+                    "match": {
+                      "arguments": [
+                        {
+                          "val": "/prelimits/v1/{accountNumber} and parameter: {orig\u003dSBGMO}"
+                        }
+                      ],
+                      "location": "GetTask Actor performAs"
+                    },
+                    "keyword": "performAs"
+                  }
+                ],
+                "name": "When Gavin attempts to ",
+                "match": {
+                  "arguments": [
+                    {
+                      "val": "When"
+                    },
+                    {
+                      "val": "Gavin"
+                    }
+                  ],
+                  "location": " void attemptsTo"
+                },
+                "keyword": "attemptsTo"
+              }
+            ],
+            "line": 11,
+            "name": "the customer requests the pre limit increase information for the card",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.theCustomerRequestsThePreLimitIncreaseInformationForTheCard()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 93512445,
+              "status": "passed"
+            },
+            "children": [
+              {
+                "result": {
+                  "duration": 19078440,
+                  "status": "passed"
+                },
+                "children": [
+                  {
+                    "result": {
+                      "duration": 3703212,
+                      "status": "passed"
+                    },
+                    "name": "see that  he is approved for limit increase is \u003ctrue\u003e",
+                    "match": {
+                      "location": "QuestionConsequence void evaluateFor"
+                    },
+                    "keyword": "evaluateFor"
+                  },
+                  {
+                    "result": {
+                      "duration": 3163729,
+                      "status": "passed"
+                    },
+                    "name": "see that the maximimum risk limit increase is a value greater than \u003c1000.00\u003e",
+                    "match": {
+                      "location": "QuestionConsequence void evaluateFor"
+                    },
+                    "keyword": "evaluateFor"
+                  }
+                ],
+                "name": "Then Gavin should ",
+                "match": {
+                  "arguments": [
+                    {
+                      "val": "Then"
+                    },
+                    {
+                      "val": "Gavin"
+                    }
+                  ],
+                  "location": " void should"
+                },
+                "keyword": "should"
+              }
+            ],
+            "line": 12,
+            "name": "the pre limit increase information should reflect the range of the limit increase the customer qualifies for",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.thenItReflectsHisRange()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 7,
+            "name": "@cps_wip_#PW-48953"
+          },
+          {
+            "line": 8,
+            "name": "@cps_wip"
+          }
+        ]
+      },
+      {
+        "line": 16,
+        "name": "Pre limit authorisation fails on a card that does not exist",
+        "description": "",
+        "id": "apply-for-credit-limit-increase;pre-limit-authorisation-fails-on-a-card-that-does-not-exist",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3483405,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the invalid credit card number 5520578340384029",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5520578340384029",
+                  "offset": 31
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.theInvalidCreditCardNumber(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 110191436,
+              "status": "passed"
+            },
+            "children": [
+              {
+                "result": {
+                  "duration": 105573431,
+                  "status": "passed"
+                },
+                "children": [
+                  {
+                    "embeddings": [
+                      {
+                        "data": "WyB7CiAgInNjb3BlUGF0aCIgOiAiMTcyLjk5LjAuNS84MDgwL2Nwc193aXAvMTIvQ3JlZGl0TGltaXRJbmNyZWFzZXMvQXBwbHlfZm9yX0NyZWRpdF9MaW1pdF9JbmNyZWFzZS9QcmVfbGltaXRfYXV0aG9yaXNhdGlvbl9mYWlsc19vbl9hX2NhcmRfdGhhdF9kb2VzX25vdF9leGlzdC9HYXZpbiIsCiAgInN0ZXAiIDogIldoZW5fR2F2aW5fYXR0ZW1wdHNfdG8vc2VuZF9hX0dFVF9yZXF1ZXN0X3RvX19wcmVsaW1pdHNfdjFfX29icmNfYWNjb3VudE51bWJlcl9jYnJjX19hbmRfcGFyYW1ldGVyX19fb2JyY19vcmlnX2VxdWFsc19TQkdNT19jYnJjXyIsCiAgInJlcXVlc3QiIDogewogICAgImJhc2U2NEJvZHkiIDogIiIsCiAgICAiaGVhZGVycyIgOiB7CiAgICAgICJBY2NlcHQiIDogIiovKiIsCiAgICAgICJDb25uZWN0aW9uIiA6ICJrZWVwLWFsaXZlIiwKICAgICAgIlVzZXItQWdlbnQiIDogIkFwYWNoZS1IdHRwQ2xpZW50LzQuNS4xIChKYXZhLzEuOC4wXzEzMSkiLAogICAgICAiSG9zdCIgOiAiMTcyLjk5LjAuNTo4MDgwIiwKICAgICAgIkFjY2VwdC1FbmNvZGluZyIgOiAiZ3ppcCxkZWZsYXRlIiwKICAgICAgIngtc2JnLXNlcXVlbmNlLW51bWJlciIgOiAiMSIsCiAgICAgICJ4LWlibS1jbGllbnQtaWQiIDogImRmMThmMWQwLTNjNjctNGJkZS1iYThhLTc3YTJlNGJkMzEyMiIsCiAgICAgICJ4LWlibS1jbGllbnQtc2VjcmV0IiA6ICJ3UDdlVDh2STBmSzVxTDNtVzhtTTJqVDdwTTh2RDdhSzRzQzF5TDhmUDJhQzhtSjF2WCIsCiAgICAgICJ4LXNiZy1tZXNzYWdlVHJhY2VJZCIgOiBbICIxNzIuOTkuMC41LzgwODAvY3BzX3dpcC8xMi9DcmVkaXRMaW1pdEluY3JlYXNlcy9BcHBseV9mb3JfQ3JlZGl0X0xpbWl0X0luY3JlYXNlL1ByZV9saW1pdF9hdXRob3Jpc2F0aW9uX2ZhaWxzX29uX2FfY2FyZF90aGF0X2RvZXNfbm90X2V4aXN0L0dhdmluIiwgIjE3Mi45OS4wLjUvODA4MC9jcHNfd2lwLzEyL0NyZWRpdExpbWl0SW5jcmVhc2VzL0FwcGx5X2Zvcl9DcmVkaXRfTGltaXRfSW5jcmVhc2UvUHJlX2xpbWl0X2F1dGhvcmlzYXRpb25fZmFpbHNfb25fYV9jYXJkX3RoYXRfZG9lc19ub3RfZXhpc3QvR2F2aW4iIF0sCiAgICAgICJ4LW9yaWdpbmFsLXVybCIgOiAiaHR0cHM6Ly9hcGlnc2Euc3RhbmRhcmRiYW5rLmNvLnphOjU0NDMvY2FyZC9zaXQxL2NhcmQvbGltaXRzL3ByZWxpbWl0cy92MS81NTIwNTc4MzQwMzg0MDI5IiwKICAgICAgInguc2VydmljZS5pbnZvY2F0aW9uLmNvdW50cyIgOiAiaHR0cHM6R0VUOi8vYXBpZ3NhLnN0YW5kYXJkYmFuay5jby56YTo1NDQzL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOXwxIiwKICAgICAgImF1dG9tYXRpb24ucHJveHkudW5tYXBwZWQuZW5kcG9pbnRzIiA6ICJ0cnVlIiwKICAgICAgIkNvbnRlbnQtTGVuZ3RoIiA6ICIwIiwKICAgICAgIkNvbnRlbnQtVHlwZSIgOiAiYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOCIsCiAgICAgICJ4LXNiZy10b2tlbiIgOiAiYVhOemRXVmZkR2x0WlQwaU1qQXhOeTB3T0MweE1WUXhNam8wTURvd09TSU5DbWx6YzNWbGNqMGlRejFUUVN3Z1UxUTlSMkYxZEdWdVp5d2dURDFLYjJoaGJtNWxjMkoxY21jc0lFODlVM1JoYm1SaGNtUmlZVzVyTENCUFZUMVRiMngxZEdsdmJpQkVaV3hwZG1WeWVTd2dRMDQ5UkdGMFlYQnZkMlZ5Vkc5clpXNVRaWEoyWlhJdWMzUmhibVJoY21SaVlXNXJMbU52TG5waElnMEtibTkwWDJGbWRHVnlQU0l5TURFM0xUQTRMVEV4VkRFeU9qUTFPakE1SWcwS2JtOTBYMkpsWm05eVpUMGlNakF4Tnkwd09DMHhNVlF4TWpvek9Ub3dPU0lOQ25WelpYSnBaRDBpWjJGMmFXNHVkR1Z6ZEdsdVowQnphWFF4TG1OdmJTSU5DblZ1YVhGMVpVbHVaR1Z1ZEdsbWFXVnlQU0ptTnpsallqaGxZeTAwTURrNUxUUTBPV1V0T0dZeU1pMDRZbVZrWVRRME1EUmtNamtpRFFwemFXZHVZWFIxY21VOUlsRldablp1YWpGV2JrSnZXakY0TVdSSVVHTTRiemxhWkc5QmNtZDNlRTQ0YmpoVlRUTjJMMGxzZVhwRlRYZzJlbTFpSzJ0R2VqZDNaakY1Y3pob05pdDFRMUJVVmpKd2QyRm5TWEF4UWxKdFJITlBjSGhVYldoTVQzWXJOak5qTUVOWmNWZFlOelprYVVFd05YVXdPV3hOVjI1NVMycFZOaTh5T1hoMUt6RmhXRUZ1VDBaYWVYWkxNWEpqTTJ4UlFXbzVVMVpVVVhNeVVWSlNjbEpIUWtVd01qVndkRGRRT1dOYVpURjNUSEk1UkVsQ01GbzJTUzlGUWtGdGJXZExWVEp4Tm5OWVJXNW1OR2hhTWtaSFltZFRUaTgzUlU1bGNWbHdlVU41YVM5VFZXWlJVMHBrVHk5VFYwSllaMWRhYUU5VU1reFhjbkZ5Y0ZGMlVUQkxUMUpYV1U0eU1uVXlVblF6TldRclVXRXZTMVJ4ZEc1clZsUlRTRk5NTWpVd1JuRlBNVU5qZGpoWlpXZHpibkYxYW5aQlVpODFNRFJFZFRSalpteDZLM0JaVFRCdlJXNUViWFJKTjBwdGVtZGlVM2RUWVV4eVVUMDlJZz09IgogICAgfSwKICAgICJkYXRlIiA6IDE1MDI0NTUyMTAyMzAsCiAgICAibWV0aG9kIiA6ICJHRVQiLAogICAgInJlcXVlc3RlZFVybCIgOiAiL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOSIsCiAgICAic2VxdWVuY2VOdW1iZXIiIDogMSwKICAgICJjb29raWVzIiA6IHsgfSwKICAgICJjbGllbnRJcCIgOiAiMTcyLjk5LjAuMSIsCiAgICAiYWJzb2x1dGVVcmwiIDogImh0dHA6Ly8xNzIuOTkuMC41OjgwODAvY2FyZC9zaXQxL2NhcmQvbGltaXRzL3ByZWxpbWl0cy92MS81NTIwNTc4MzQwMzg0MDI5P29yaWc9U0JHTU8iLAogICAgInVybCIgOiAiL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOT9vcmlnPVNCR01PIiwKICAgICJhbGxIZWFkZXJLZXlzIiA6IFsgIkFjY2VwdCIsICJDb25uZWN0aW9uIiwgIlVzZXItQWdlbnQiLCAiSG9zdCIsICJBY2NlcHQtRW5jb2RpbmciLCAieC1zYmctc2VxdWVuY2UtbnVtYmVyIiwgIngtaWJtLWNsaWVudC1pZCIsICJ4LWlibS1jbGllbnQtc2VjcmV0IiwgIngtc2JnLW1lc3NhZ2VUcmFjZUlkIiwgIngtb3JpZ2luYWwtdXJsIiwgInguc2VydmljZS5pbnZvY2F0aW9uLmNvdW50cyIsICJhdXRvbWF0aW9uLnByb3h5LnVubWFwcGVkLmVuZHBvaW50cyIsICJDb250ZW50LUxlbmd0aCIsICJDb250ZW50LVR5cGUiLCAieC1zYmctdG9rZW4iIF0KICB9LAogICJyZXNwb25zZSIgOiB7CiAgICAiYmFzZTY0Qm9keSIgOiAiZXlKR1lYVnNkQ0k2ZXlKbVlYVnNkSE4wY21sdVp5STZJa0ZqWTI5MWJuUWdibTkwSUdadmRXNWtJbjE5IiwKICAgICJoZWFkZXJzIiA6IHsKICAgICAgIlgtQmFja3NpZGUtVHJhbnNwb3J0IiA6ICJPSyBPSyIsCiAgICAgICJDb25uZWN0aW9uIiA6ICJLZWVwLUFsaXZlIiwKICAgICAgIlRyYW5zZmVyLUVuY29kaW5nIiA6ICJjaHVua2VkIiwKICAgICAgIkNvbnRlbnQtVHlwZSIgOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgICJEYXRlIiA6ICJGcmksIDExIEF1ZyAyMDE3IDEyOjQwOjEwIEdNVCIsCiAgICAgICJYLUdsb2JhbC1UcmFuc2FjdGlvbi1JRCIgOiAiMzg0MzM1NDMxIiwKICAgICAgIlVzZXItQWdlbnQiIDogIklCTS1BUElDb25uZWN0LzUuMCIsCiAgICAgICJTZXJ2ZXIiIDogIklCTV9DSUNTX1RyYW5zYWN0aW9uX1NlcnZlci81LjMuMCh6T1MpIiwKICAgICAgIkFjY2Vzcy1Db250cm9sLUV4cG9zZS1IZWFkZXJzIiA6ICJBUEltLURlYnVnLVRyYW5zLUlkLCBYLVJhdGVMaW1pdC1MaW1pdCwgWC1SYXRlTGltaXQtUmVtYWluaW5nLCBYLVJhdGVMaW1pdC1SZXNldCwgWC1HbG9iYWwtVHJhbnNhY3Rpb24tSUQiLAogICAgICAiQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luIiA6ICIqIiwKICAgICAgIkFjY2Vzcy1Db250cm9sLUFsbG93LU1ldGhvZHMiIDogIkdFVCIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1BbGxvdy1DcmVkZW50aWFscyIgOiAiZmFsc2UiLAogICAgICAiWC1SYXRlTGltaXQtTGltaXQiIDogIm5hbWU9cmF0ZS1saW1pdCwxMDA7IiwKICAgICAgIlgtUmF0ZUxpbWl0LVJlbWFpbmluZyIgOiAibmFtZT1yYXRlLWxpbWl0LDk4OyIsCiAgICAgICJDb250ZW50LUVuY29kaW5nIiA6ICJnemlwIgogICAgfSwKICAgICJkYXRlIiA6IDE1MDI0NTUyMTAyNzEsCiAgICAic3RhdHVzIiA6IDQ1NgogIH0sCiAgImR1cmF0aW9uIiA6IDAsCiAgIm5lc3RlZEV4Y2hhbmdlcyIgOiBbIF0KfSBd",
+                        "mime_type": "application/json"
+                      }
+                    ],
+                    "result": {
+                      "duration": 97505010,
+                      "status": "passed"
+                    },
+                    "name": "send a GET request to /prelimits/v1/{accountNumber} and parameter: {orig\u003dSBGMO}",
+                    "match": {
+                      "arguments": [
+                        {
+                          "val": "/prelimits/v1/{accountNumber} and parameter: {orig\u003dSBGMO}"
+                        }
+                      ],
+                      "location": "GetTask Actor performAs"
+                    },
+                    "keyword": "performAs"
+                  }
+                ],
+                "name": "When Gavin attempts to ",
+                "match": {
+                  "arguments": [
+                    {
+                      "val": "When"
+                    },
+                    {
+                      "val": "Gavin"
+                    }
+                  ],
+                  "location": " void attemptsTo"
+                },
+                "keyword": "attemptsTo"
+              }
+            ],
+            "line": 18,
+            "name": "the customer requests the pre limit increase information for the card",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.theCustomerRequestsThePreLimitIncreaseInformationForTheCard()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 64173713,
+              "error_message": "java.lang.AssertionError: 1 expectation failed.\nExpected status code \u003c404\u003e but was \u003c456\u003e.\n\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:83)\n\tat org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:77)\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:471)\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\n\tat io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:88)\n\tat com.sbg.bdd.screenplay.restassured.ResponseConsequence.evaluateFor(ResponseConsequence.java:35)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat com.sbg.bdd.screenplay.core.internal.ScreenplayStepMethodInfo.invoke(ScreenplayStepMethodInfo.java:118)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performStep(BaseActor.java:147)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:131)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:122)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor$1.should(BaseActor.java:90)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat com.sbg.bdd.screenplay.core.internal.ScreenplayStepMethodInfo.invoke(ScreenplayStepMethodInfo.java:118)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performStep(BaseActor.java:147)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:131)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.should(BaseActor.java:84)\n\tat com.sbg.bdd.screenplay.restassured.RestAssuredTasks.thenFor(RestAssuredTasks.java:56)\n\tat com.sbg.domain.card.creditcardlimits.impl.CreditLimitIncreaseSteps.theResponseShouldReflectThatSuchACardNumberCouldNotBeFound(CreditLimitIncreaseSteps.java:146)\n\tat ✽.Then the response should reflect that such a card number could not be found(CreditLimitIncreases/ApplyForCreditLimitIncrease.feature:19)\n",
+              "status": "failed"
+            },
+            "children": [
+              {
+                "result": {
+                  "duration": 42078460,
+                  "error_message": "java.lang.AssertionError: 1 expectation failed.\nExpected status code \u003c404\u003e but was \u003c456\u003e.\n\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:83)\n\tat org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:77)\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:471)\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\n\tat io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:88)\n\tat com.sbg.bdd.screenplay.restassured.ResponseConsequence.evaluateFor(ResponseConsequence.java:35)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat com.sbg.bdd.screenplay.core.internal.ScreenplayStepMethodInfo.invoke(ScreenplayStepMethodInfo.java:118)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performStep(BaseActor.java:147)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:131)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:122)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor$1.should(BaseActor.java:90)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat com.sbg.bdd.screenplay.core.internal.ScreenplayStepMethodInfo.invoke(ScreenplayStepMethodInfo.java:118)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performStep(BaseActor.java:147)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:131)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.should(BaseActor.java:84)\n\tat com.sbg.bdd.screenplay.restassured.RestAssuredTasks.thenFor(RestAssuredTasks.java:56)\n\tat com.sbg.domain.card.creditcardlimits.impl.CreditLimitIncreaseSteps.theResponseShouldReflectThatSuchACardNumberCouldNotBeFound(CreditLimitIncreaseSteps.java:146)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat cucumber.runtime.Utils$1.call(Utils.java:40)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\n\tat cucumber.runtime.Utils.invoke(Utils.java:34)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:300)\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\n\tat com.sbg.bdd.screenplay.cucumber.junit.CucumberWithWireMock.runChild(CucumberWithWireMock.java:85)\n\tat com.sbg.bdd.screenplay.cucumber.junit.CucumberWithWireMock.runChild(CucumberWithWireMock.java:32)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat com.sbg.bdd.screenplay.cucumber.junit.CucumberWithWireMock.run(CucumberWithWireMock.java:90)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)\n\tat com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)\n",
+                  "status": "failed"
+                },
+                "children": [
+                  {
+                    "result": {
+                      "duration": 29461570,
+                      "error_message": "java.lang.AssertionError: 1 expectation failed.\nExpected status code \u003c404\u003e but was \u003c456\u003e.\n\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:83)\n\tat org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:77)\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:471)\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\n\tat io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:88)\n\tat com.sbg.bdd.screenplay.restassured.ResponseConsequence.evaluateFor(ResponseConsequence.java:35)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat com.sbg.bdd.screenplay.core.internal.ScreenplayStepMethodInfo.invoke(ScreenplayStepMethodInfo.java:118)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performStep(BaseActor.java:147)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:131)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:122)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor$1.should(BaseActor.java:90)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat com.sbg.bdd.screenplay.core.internal.ScreenplayStepMethodInfo.invoke(ScreenplayStepMethodInfo.java:118)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performStep(BaseActor.java:147)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.performSteps(BaseActor.java:131)\n\tat com.sbg.bdd.screenplay.core.internal.BaseActor.should(BaseActor.java:84)\n\tat com.sbg.bdd.screenplay.restassured.RestAssuredTasks.thenFor(RestAssuredTasks.java:56)\n\tat com.sbg.domain.card.creditcardlimits.impl.CreditLimitIncreaseSteps.theResponseShouldReflectThatSuchACardNumberCouldNotBeFound(CreditLimitIncreaseSteps.java:146)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat cucumber.runtime.Utils$1.call(Utils.java:40)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\n\tat cucumber.runtime.Utils.invoke(Utils.java:34)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:300)\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\n\tat com.sbg.bdd.screenplay.cucumber.junit.CucumberWithWireMock.runChild(CucumberWithWireMock.java:85)\n\tat com.sbg.bdd.screenplay.cucumber.junit.CucumberWithWireMock.runChild(CucumberWithWireMock.java:32)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat com.sbg.bdd.screenplay.cucumber.junit.CucumberWithWireMock.run(CucumberWithWireMock.java:90)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)\n\tat com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)\n",
+                      "status": "failed"
+                    },
+                    "name": "see that the status code \u003c404\u003e",
+                    "match": {
+                      "location": "ResponseConsequence void evaluateFor"
+                    },
+                    "keyword": "evaluateFor"
+                  }
+                ],
+                "name": "Then Gavin should ",
+                "match": {
+                  "arguments": [
+                    {
+                      "val": "Then"
+                    },
+                    {
+                      "val": "Gavin"
+                    }
+                  ],
+                  "location": " void should"
+                },
+                "keyword": "should"
+              }
+            ],
+            "line": 19,
+            "name": "the response should reflect that such a card number could not be found",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.theResponseShouldReflectThatSuchACardNumberCouldNotBeFound()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 14,
+            "name": "@cps_wip_#PW-48954"
+          },
+          {
+            "line": 15,
+            "name": "@cps_wip"
+          }
+        ]
+      }
+    ],
+    "name": "Apply for Credit Limit Increase",
+    "description": "As a Standard Bank Customer\nI would like to know if I qualify for a credit limit increase\nin order to know the amount my credit limit would be increased to",
+    "id": "apply-for-credit-limit-increase",
+    "keyword": "Feature",
+    "uri": "CreditLimitIncreases/ApplyForCreditLimitIncrease.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 8,
+        "name": "Successfully updating the credit limit",
+        "description": "",
+        "id": "accept-or-reject-credit-limit-increase;successfully-updating-the-credit-limit",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1353259,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "a KYC-ed customer with the credit card 5239826700000557 qualifies for a credit limit increase of R70000",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5239826700000557",
+                  "offset": 39
+                },
+                {
+                  "val": "70000",
+                  "offset": 98
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.aKYCEdCustomerWithTheCreditCardQualifiesForACreditLimitIncreaseOfR(String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1499136,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat com.sbg.domain.card.creditcardlimits.impl.CreditLimitIncreaseSteps.theCustomerIncreasesHerCreditLimitByR(CreditLimitIncreaseSteps.java:155)\n\tat ✽.When the customer increases her credit limit by R60000(CreditLimitIncreases/CreditLimitIncreaseConfirmation.feature:10)\n",
+              "status": "undefined"
+            },
+            "line": 10,
+            "name": "the customer increases her credit limit by R60000",
+            "match": {
+              "arguments": [
+                {
+                  "val": "60000",
+                  "offset": 44
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.theCustomerIncreasesHerCreditLimitByR(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 0,
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "the new credit limit must be in place",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.theNewCreditLimitMustBeInPlace()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@cps_wip_#PW-48952"
+          },
+          {
+            "line": 7,
+            "name": "@cps_wip"
+          }
+        ]
+      },
+      {
+        "line": 15,
+        "name": "Failing when updating a credit limit higher than the maximum the customer qualifies for",
+        "description": "",
+        "id": "accept-or-reject-credit-limit-increase;failing-when-updating-a-credit-limit-higher-than-the-maximum-the-customer-qualifies-for",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 171868,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "a KYC-ed customer with the credit card 5221266260024699 qualifies for a credit limit increase of R70000",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5221266260024699",
+                  "offset": 39
+                },
+                {
+                  "val": "70000",
+                  "offset": 98
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.aKYCEdCustomerWithTheCreditCardQualifiesForACreditLimitIncreaseOfR(String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 414329,
+              "error_message": "java.lang.IllegalArgumentException: This test is broken\n\tat com.sbg.domain.card.creditcardlimits.impl.CreditLimitIncreaseSteps.theCustomerIncreasesHerCreditLimitByR(CreditLimitIncreaseSteps.java:153)\n\tat ✽.When the customer increases her credit limit by R80000(CreditLimitIncreases/CreditLimitIncreaseConfirmation.feature:17)\n",
+              "status": "failed"
+            },
+            "line": 17,
+            "name": "the customer increases her credit limit by R80000",
+            "match": {
+              "arguments": [
+                {
+                  "val": "80000",
+                  "offset": 44
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.theCustomerIncreasesHerCreditLimitByR(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 0,
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "the new credit limit must be in place",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.theNewCreditLimitMustBeInPlace()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 13,
+            "name": "@cps_wip_#PW-49155"
+          },
+          {
+            "line": 14,
+            "name": "@cps_wip"
+          }
+        ]
+      },
+      {
+        "line": 22,
+        "name": "Failing when a non KYC-ed customer updates the credit limit",
+        "description": "",
+        "id": "accept-or-reject-credit-limit-increase;failing-when-a-non-kyc-ed-customer-updates-the-credit-limit",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 215449,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "a non KYC-ed customer with the credit card 5239826700000722",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5239826700000722",
+                  "offset": 43
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.aNonKYCEdCustomerWithTheCreditCard(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 372870,
+              "error_message": "java.lang.NullPointerException\n\tat com.sbg.bdd.screenplay.core.ScreenplayPhrases.when(ScreenplayPhrases.java:50)\n\tat com.sbg.domain.card.creditcardlimits.impl.CreditLimitIncreaseSteps.theCustomerIncreasesHerCreditLimitByR(CreditLimitIncreaseSteps.java:160)\n\tat ✽.When the customer increases her credit limit by R50000(CreditLimitIncreases/CreditLimitIncreaseConfirmation.feature:24)\n",
+              "status": "failed"
+            },
+            "line": 24,
+            "name": "the customer increases her credit limit by R50000",
+            "match": {
+              "arguments": [
+                {
+                  "val": "50000",
+                  "offset": 44
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.theCustomerIncreasesHerCreditLimitByR(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 0,
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "the response should reflect that the increase is not allowed",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.theResponseShouldReflectThatTheIncreaseIsNotAllowed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 20,
+            "name": "@cps_wip_#PW-49154"
+          },
+          {
+            "line": 21,
+            "name": "@cps_wip"
+          }
+        ]
+      }
+    ],
+    "name": "Accept or Reject Credit Limit Increase",
+    "description": "As a Standard Bank Customer who accepted a Credit Limit increase\nI would like to receive confirmation\nin order to know the credit limit increase is successful",
+    "id": "accept-or-reject-credit-limit-increase",
+    "keyword": "Feature",
+    "uri": "CreditLimitIncreases/CreditLimitIncreaseConfirmation.feature"
+  },
+  {
+    "line": 4,
+    "elements": [
+      {
+        "line": 11,
+        "name": "Successful pre limit authorisation",
+        "description": "",
+        "id": "enter-income-and-expenses;successful-pre-limit-authorisation",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4110334,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "that Gavin has a credit card \u00275520578340384028\u0027 for which he qualifies for a pre-approved credit limit increase",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5520578340384028",
+                  "offset": 30
+                }
+              ],
+              "location": "CreditLimitIncreaseSteps.theCustomerWithTheCreditCardQualifiesForACreditLimitIncrease(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 80623787,
+              "status": "passed"
+            },
+            "children": [
+              {
+                "result": {
+                  "duration": 77004214,
+                  "status": "passed"
+                },
+                "children": [
+                  {
+                    "embeddings": [
+                      {
+                        "data": "WyB7CiAgInNjb3BlUGF0aCIgOiAiMTcyLjk5LjAuNS84MDgwL2Nwc193aXAvMTIvQ3JlZGl0TGltaXRJbmNyZWFzZXMvRW50ZXJfSW5jb21lX2FuZF9FeHBlbnNlcy9TdWNjZXNzZnVsX3ByZV9saW1pdF9hdXRob3Jpc2F0aW9uL0dhdmluIiwKICAic3RlcCIgOiAiV2hlbl9HYXZpbl9hdHRlbXB0c190by9zZW5kX2FfR0VUX3JlcXVlc3RfdG9fX3ByZWxpbWl0c192MV9fb2JyY19hY2NvdW50TnVtYmVyX2NicmNfX2FuZF9wYXJhbWV0ZXJfX19vYnJjX29yaWdfZXF1YWxzX1NCR01PX2NicmNfIiwKICAicmVxdWVzdCIgOiB7CiAgICAiYmFzZTY0Qm9keSIgOiAiIiwKICAgICJoZWFkZXJzIiA6IHsKICAgICAgIkFjY2VwdCIgOiAiKi8qIiwKICAgICAgIkNvbm5lY3Rpb24iIDogImtlZXAtYWxpdmUiLAogICAgICAiVXNlci1BZ2VudCIgOiAiQXBhY2hlLUh0dHBDbGllbnQvNC41LjEgKEphdmEvMS44LjBfMTMxKSIsCiAgICAgICJIb3N0IiA6ICIxNzIuOTkuMC41OjgwODAiLAogICAgICAiQWNjZXB0LUVuY29kaW5nIiA6ICJnemlwLGRlZmxhdGUiLAogICAgICAieC1zYmctc2VxdWVuY2UtbnVtYmVyIiA6ICIxIiwKICAgICAgIngtaWJtLWNsaWVudC1pZCIgOiAiZGYxOGYxZDAtM2M2Ny00YmRlLWJhOGEtNzdhMmU0YmQzMTIyIiwKICAgICAgIngtaWJtLWNsaWVudC1zZWNyZXQiIDogIndQN2VUOHZJMGZLNXFMM21XOG1NMmpUN3BNOHZEN2FLNHNDMXlMOGZQMmFDOG1KMXZYIiwKICAgICAgIngtc2JnLW1lc3NhZ2VUcmFjZUlkIiA6IFsgIjE3Mi45OS4wLjUvODA4MC9jcHNfd2lwLzEyL0NyZWRpdExpbWl0SW5jcmVhc2VzL0VudGVyX0luY29tZV9hbmRfRXhwZW5zZXMvU3VjY2Vzc2Z1bF9wcmVfbGltaXRfYXV0aG9yaXNhdGlvbi9HYXZpbiIsICIxNzIuOTkuMC41LzgwODAvY3BzX3dpcC8xMi9DcmVkaXRMaW1pdEluY3JlYXNlcy9FbnRlcl9JbmNvbWVfYW5kX0V4cGVuc2VzL1N1Y2Nlc3NmdWxfcHJlX2xpbWl0X2F1dGhvcmlzYXRpb24vR2F2aW4iIF0sCiAgICAgICJ4LW9yaWdpbmFsLXVybCIgOiAiaHR0cHM6Ly9hcGlnc2Euc3RhbmRhcmRiYW5rLmNvLnphOjU0NDMvY2FyZC9zaXQxL2NhcmQvbGltaXRzL3ByZWxpbWl0cy92MS81NTIwNTc4MzQwMzg0MDI4IiwKICAgICAgInguc2VydmljZS5pbnZvY2F0aW9uLmNvdW50cyIgOiAiaHR0cHM6R0VUOi8vYXBpZ3NhLnN0YW5kYXJkYmFuay5jby56YTo1NDQzL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOHwxIiwKICAgICAgImF1dG9tYXRpb24ucHJveHkudW5tYXBwZWQuZW5kcG9pbnRzIiA6ICJ0cnVlIiwKICAgICAgIkNvbnRlbnQtTGVuZ3RoIiA6ICIwIiwKICAgICAgIkNvbnRlbnQtVHlwZSIgOiAiYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOCIsCiAgICAgICJ4LXNiZy10b2tlbiIgOiAiYVhOemRXVmZkR2x0WlQwaU1qQXhOeTB3T0MweE1WUXhNam8wTURvd09TSU5DbWx6YzNWbGNqMGlRejFUUVN3Z1UxUTlSMkYxZEdWdVp5d2dURDFLYjJoaGJtNWxjMkoxY21jc0lFODlVM1JoYm1SaGNtUmlZVzVyTENCUFZUMVRiMngxZEdsdmJpQkVaV3hwZG1WeWVTd2dRMDQ5UkdGMFlYQnZkMlZ5Vkc5clpXNVRaWEoyWlhJdWMzUmhibVJoY21SaVlXNXJMbU52TG5waElnMEtibTkwWDJGbWRHVnlQU0l5TURFM0xUQTRMVEV4VkRFeU9qUTFPakE1SWcwS2JtOTBYMkpsWm05eVpUMGlNakF4Tnkwd09DMHhNVlF4TWpvek9Ub3dPU0lOQ25WelpYSnBaRDBpWjJGMmFXNHVkR1Z6ZEdsdVowQnphWFF4TG1OdmJTSU5DblZ1YVhGMVpVbHVaR1Z1ZEdsbWFXVnlQU0ptTnpsallqaGxZeTAwTURrNUxUUTBPV1V0T0dZeU1pMDRZbVZrWVRRME1EUmtNamtpRFFwemFXZHVZWFIxY21VOUlsRldablp1YWpGV2JrSnZXakY0TVdSSVVHTTRiemxhWkc5QmNtZDNlRTQ0YmpoVlRUTjJMMGxzZVhwRlRYZzJlbTFpSzJ0R2VqZDNaakY1Y3pob05pdDFRMUJVVmpKd2QyRm5TWEF4UWxKdFJITlBjSGhVYldoTVQzWXJOak5qTUVOWmNWZFlOelprYVVFd05YVXdPV3hOVjI1NVMycFZOaTh5T1hoMUt6RmhXRUZ1VDBaYWVYWkxNWEpqTTJ4UlFXbzVVMVpVVVhNeVVWSlNjbEpIUWtVd01qVndkRGRRT1dOYVpURjNUSEk1UkVsQ01GbzJTUzlGUWtGdGJXZExWVEp4Tm5OWVJXNW1OR2hhTWtaSFltZFRUaTgzUlU1bGNWbHdlVU41YVM5VFZXWlJVMHBrVHk5VFYwSllaMWRhYUU5VU1reFhjbkZ5Y0ZGMlVUQkxUMUpYV1U0eU1uVXlVblF6TldRclVXRXZTMVJ4ZEc1clZsUlRTRk5NTWpVd1JuRlBNVU5qZGpoWlpXZHpibkYxYW5aQlVpODFNRFJFZFRSalpteDZLM0JaVFRCdlJXNUViWFJKTjBwdGVtZGlVM2RUWVV4eVVUMDlJZz09IgogICAgfSwKICAgICJkYXRlIiA6IDE1MDI0NTUyMTA2NTcsCiAgICAibWV0aG9kIiA6ICJHRVQiLAogICAgInJlcXVlc3RlZFVybCIgOiAiL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOCIsCiAgICAic2VxdWVuY2VOdW1iZXIiIDogMSwKICAgICJjb29raWVzIiA6IHsgfSwKICAgICJjbGllbnRJcCIgOiAiMTcyLjk5LjAuMSIsCiAgICAiYWJzb2x1dGVVcmwiIDogImh0dHA6Ly8xNzIuOTkuMC41OjgwODAvY2FyZC9zaXQxL2NhcmQvbGltaXRzL3ByZWxpbWl0cy92MS81NTIwNTc4MzQwMzg0MDI4P29yaWc9U0JHTU8iLAogICAgInVybCIgOiAiL2NhcmQvc2l0MS9jYXJkL2xpbWl0cy9wcmVsaW1pdHMvdjEvNTUyMDU3ODM0MDM4NDAyOD9vcmlnPVNCR01PIiwKICAgICJhbGxIZWFkZXJLZXlzIiA6IFsgIkFjY2VwdCIsICJDb25uZWN0aW9uIiwgIlVzZXItQWdlbnQiLCAiSG9zdCIsICJBY2NlcHQtRW5jb2RpbmciLCAieC1zYmctc2VxdWVuY2UtbnVtYmVyIiwgIngtaWJtLWNsaWVudC1pZCIsICJ4LWlibS1jbGllbnQtc2VjcmV0IiwgIngtc2JnLW1lc3NhZ2VUcmFjZUlkIiwgIngtb3JpZ2luYWwtdXJsIiwgInguc2VydmljZS5pbnZvY2F0aW9uLmNvdW50cyIsICJhdXRvbWF0aW9uLnByb3h5LnVubWFwcGVkLmVuZHBvaW50cyIsICJDb250ZW50LUxlbmd0aCIsICJDb250ZW50LVR5cGUiLCAieC1zYmctdG9rZW4iIF0KICB9LAogICJyZXNwb25zZSIgOiB7CiAgICAiYmFzZTY0Qm9keSIgOiAiZXlKUWNtVk1hVzFwZEY5a1pYUmhhV3h6SWpwN0lsQnlaVXhwYldsMFgxQnlhVzFoY25sZlEyRnlaRjlPZFcxaVpYSWlPaUkxTlRJd05UYzRNelF3TXpnME1ESTRJaXdpVUhKbFRHbHRhWFJmUW1Gc1lXNWpaU0k2SWkweE5qTTJPRGN1TnpJaUxDSlFjbVZNYVcxcGRGOURkWEp5Wlc1MFgwTnlaV1JwZEY5TWFXMXBkQ0k2SWpFd01EQXdMakF3SWl3aVVISmxUR2x0YVhSZlJYTjBhVzFoZEdWa1gwZHliM056WDBsdVkyOXRaU0k2SWpFNE9UWTRMak0wSWl3aVVISmxUR2x0YVhSZlFuVnlaV0YxWDBOdmJXMGlPalkwT0RZc0lsQnlaVXhwYldsMFgwVnpkR2x0WVhSbFpGOUZlSEJsYm5ObGN5STZJakV5TlRRMkxqSTRJaXdpVUhKbFRHbHRhWFJmUlhOMGFXMWhkR1ZrWDFOMWNuQnNkWE1pT2lJMk5ESXlMakEzSWl3aVVISmxUR2x0YVhSZlJYTjBhVzFoZEdWa1gwRm1abDlNYVcxcGRDSTZJakl3TnpjeE1pNDFPU0lzSWxCeVpVeHBiV2wwWDAxaGVGOVNhWE5yWDB4cGJXbDBYMGx1WTNKbFlYTmxJam9pTkRnMU1EQXVNREFpTENKUWNtVk1hVzFwZEY5TmIyNTBhR3g1WDFObGNuWnBZMlZmUm1WbElqb2lOVFV1TURBaUxDSlFjbVZNYVcxcGRGOUZabVpmU1c1MFpYSmxjM1JmVW1GMFpTSTZJakF1TURBaUxDSlFjbVZNYVcxcGRGOUpibk4xY21GdVkyVmZUMjVmUVdOamIzVnVkQ0k2SWxsbGN5SXNJbEJ5WlV4cGJXbDBYMGx1YzNWeVlXNWpaVjlOYjI1MGFHeDVYMFpsWlNJNklqUXVNREFpTENKUWNtVk1hVzFwZEY5SmJuTjFjbUZ1WTJWZlVtRjBaU0k2SWpBdU16WTRJaXdpVUhKbFRHbHRhWFJmVEdWaFpGOUZlSEJwY25raU9qSXdNVGN3TXpJeExDSlFjbVZNYVcxcGRGOVFSQ0k2SWpNdU1EQWlMQ0pRY21WTWFXMXBkRjlCWm1admNtUmhZbWxzYVhSNVgwWmhZM1J2Y2lJNklqUXVOVEFpZlgwPSIsCiAgICAiaGVhZGVycyIgOiB7CiAgICAgICJYLUJhY2tzaWRlLVRyYW5zcG9ydCIgOiAiT0sgT0siLAogICAgICAiQ29ubmVjdGlvbiIgOiAiS2VlcC1BbGl2ZSIsCiAgICAgICJUcmFuc2Zlci1FbmNvZGluZyIgOiAiY2h1bmtlZCIsCiAgICAgICJDb250ZW50LVR5cGUiIDogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAiRGF0ZSIgOiAiRnJpLCAxMSBBdWcgMjAxNyAxMjo0MDoxMCBHTVQiLAogICAgICAiWC1HbG9iYWwtVHJhbnNhY3Rpb24tSUQiIDogIjI2OTI2NjgxMyIsCiAgICAgICJVc2VyLUFnZW50IiA6ICJJQk0tQVBJQ29ubmVjdC81LjAiLAogICAgICAiU2VydmVyIiA6ICJJQk1fQ0lDU19UcmFuc2FjdGlvbl9TZXJ2ZXIvNS4zLjAoek9TKSIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1FeHBvc2UtSGVhZGVycyIgOiAiQVBJbS1EZWJ1Zy1UcmFucy1JZCwgWC1SYXRlTGltaXQtTGltaXQsIFgtUmF0ZUxpbWl0LVJlbWFpbmluZywgWC1SYXRlTGltaXQtUmVzZXQsIFgtR2xvYmFsLVRyYW5zYWN0aW9uLUlEIiwKICAgICAgIkFjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpbiIgOiAiKiIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1BbGxvdy1NZXRob2RzIiA6ICJHRVQiLAogICAgICAiQWNjZXNzLUNvbnRyb2wtQWxsb3ctQ3JlZGVudGlhbHMiIDogImZhbHNlIiwKICAgICAgIlgtUmF0ZUxpbWl0LUxpbWl0IiA6ICJuYW1lPXJhdGUtbGltaXQsMTAwOyIsCiAgICAgICJYLVJhdGVMaW1pdC1SZW1haW5pbmciIDogIm5hbWU9cmF0ZS1saW1pdCw5NzsiLAogICAgICAiQ29udGVudC1FbmNvZGluZyIgOiAiZ3ppcCIKICAgIH0sCiAgICAiZGF0ZSIgOiAxNTAyNDU1MjEwNjk4LAogICAgInN0YXR1cyIgOiAyMDAKICB9LAogICJkdXJhdGlvbiIgOiAwLAogICJuZXN0ZWRFeGNoYW5nZXMiIDogWyBdCn0gXQ\u003d\u003d",
+                        "mime_type": "application/json"
+                      }
+                    ],
+                    "result": {
+                      "duration": 71112419,
+                      "status": "passed"
+                    },
+                    "name": "send a GET request to /prelimits/v1/{accountNumber} and parameter: {orig\u003dSBGMO}",
+                    "match": {
+                      "arguments": [
+                        {
+                          "val": "/prelimits/v1/{accountNumber} and parameter: {orig\u003dSBGMO}"
+                        }
+                      ],
+                      "location": "GetTask Actor performAs"
+                    },
+                    "keyword": "performAs"
+                  }
+                ],
+                "name": "When Gavin attempts to ",
+                "match": {
+                  "arguments": [
+                    {
+                      "val": "When"
+                    },
+                    {
+                      "val": "Gavin"
+                    }
+                  ],
+                  "location": " void attemptsTo"
+                },
+                "keyword": "attemptsTo"
+              }
+            ],
+            "line": 13,
+            "name": "when he views the \u0027Card Overview\u0027 screen of the card",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.theheViewsTheCardOverview()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 17898504,
+              "status": "passed"
+            },
+            "children": [
+              {
+                "result": {
+                  "duration": 13386597,
+                  "status": "passed"
+                },
+                "children": [
+                  {
+                    "result": {
+                      "duration": 2569894,
+                      "status": "passed"
+                    },
+                    "name": "see that  he is approved for limit increase is \u003ctrue\u003e",
+                    "match": {
+                      "location": "QuestionConsequence void evaluateFor"
+                    },
+                    "keyword": "evaluateFor"
+                  },
+                  {
+                    "result": {
+                      "duration": 2511074,
+                      "status": "passed"
+                    },
+                    "name": "see that the maximimum risk limit increase is a value greater than \u003c1000.00\u003e",
+                    "match": {
+                      "location": "QuestionConsequence void evaluateFor"
+                    },
+                    "keyword": "evaluateFor"
+                  }
+                ],
+                "name": "Then Gavin should ",
+                "match": {
+                  "arguments": [
+                    {
+                      "val": "Then"
+                    },
+                    {
+                      "val": "Gavin"
+                    }
+                  ],
+                  "location": " void should"
+                },
+                "keyword": "should"
+              }
+            ],
+            "line": 14,
+            "name": "he is given the option to apply for a credit limit increase",
+            "match": {
+              "location": "CreditLimitIncreaseSteps.thePreLimitIncreaseInformationShouldReflectTheRangeOfTheLimitIncreaseTheCustomerQualifiesFor()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 9,
+            "name": "@cps_wip"
+          },
+          {
+            "line": 10,
+            "name": "@service_wip"
+          }
+        ]
+      }
+    ],
+    "name": "Enter Income and Expenses",
+    "description": "As a KYC-ed Standard Bank Customer\nI would like to enter my income and expenses\nin order to know what credit limit increase I would qualify for if any",
+    "id": "enter-income-and-expenses",
+    "keyword": "Feature",
+    "uri": "CreditLimitIncreases/EnterIncomeAndExpenses.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@service_#PW-54460"
+      },
+      {
+        "line": 2,
+        "name": "@android_#PW-54461"
+      },
+      {
+        "line": 3,
+        "name": "@cps_#PW-54462"
+      }
+    ]
+  }
+]

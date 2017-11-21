@@ -26,17 +26,17 @@ class WhenUsingAComplexFilterChain  extends Specification{
         config.input {
             name = 'cucumber-android'
             implementationClass = CucumberImporter.name
-            sourcePath = Paths.get(srcTestResources.absolutePath, "android.json")
+            sourcePath = Paths.get(srcTestResources.absolutePath, "android_wip.json")
         }
         config.input {
             name = 'cucumber-service'
             implementationClass = CucumberImporter.name
-            sourcePath = Paths.get(srcTestResources.absolutePath, "service.json")
+            sourcePath = Paths.get(srcTestResources.absolutePath, "service_wip.json")
         }
         config.input {
             name = 'cucumber-cps'
             implementationClass = CucumberImporter.name
-            sourcePath = Paths.get(srcTestResources.absolutePath, "cps.json")
+            sourcePath = Paths.get(srcTestResources.absolutePath, "cps_wip.json")
         }
         config.processor {
             sources = Arrays.asList('cucumber-service')
@@ -88,11 +88,10 @@ class WhenUsingAComplexFilterChain  extends Specification{
         System.setProperty("jira.password","ainnikki");
         System.setProperty("serenity.jira.workflow.active","true");
         System.setProperty("serenity.skip.jira.updates","false");
-        System.setProperty("serenity.public.url","http://localhost:8084/webdav/");
+        System.setProperty("serenity.public.url","file:/home/ampie/Code/ampie/serenity-filterchain/serenity-filterchain-gradle-plugin/output/test-output");
         config.processor {
             sources = Arrays.asList('tag-remover')
             name = 'jira-updater'
-
             implementationClass = JiraUpdatingProcessor.name
         }
         config.output {
@@ -107,15 +106,15 @@ class WhenUsingAComplexFilterChain  extends Specification{
             outputDirectory = new File("${projectDir}/output/test-output")
             sources = Arrays.asList('jira-updater')
         }
-        config.publisher {
-            name = 'webdav'
-            sources = Arrays.asList('html2')
-            implementationClass = WebDavPublishingStrategy.name
-            destination = 'http://localhost:8084/webdav/'
-            properties = new Properties()
-            properties.setProperty('username', 'test')
-            properties.setProperty('password', 'test')
-        }
+//        config.publisher {
+//            name = 'webdav'
+//            sources = Arrays.asList('html2')
+//            implementationClass = WebDavPublishingStrategy.name
+//            destination = 'http://localhost:8084/webdav/'
+//            properties = new Properties()
+//            properties.setProperty('username', 'test')
+//            properties.setProperty('password', 'test')
+//        }
         when:
         def outputs = config.buildLinks()
         outputs.each{it.clean()}

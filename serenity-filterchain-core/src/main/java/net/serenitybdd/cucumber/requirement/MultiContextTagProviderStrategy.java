@@ -12,11 +12,16 @@ import net.thucydides.core.util.EnvironmentVariables;
 
 public class MultiContextTagProviderStrategy implements TagProviderStrategy {
 
-    private final EnvironmentVariables environmentVariables;
+    private static EnvironmentVariables environmentVariables;
     private static ImmutableSet<? extends TagProvider> tagProviders;
+    private static RequirementsTagProviderDelegator requirementsTagProviderDelegator = new RequirementsTagProviderDelegator();
 
     public MultiContextTagProviderStrategy(EnvironmentVariables environmentVariables) {
         this.environmentVariables = environmentVariables;
+    }
+
+    public static void reset() {
+       if(environmentVariables!=null) reload();
     }
 
     public MultiContextTagProviderStrategy() {
@@ -35,13 +40,22 @@ public class MultiContextTagProviderStrategy implements TagProviderStrategy {
 
     private ImmutableSet<? extends TagProvider> create() {
         if (tagProviders == null) {
-            String rootDirectory = ThucydidesSystemProperty.THUCYDIDES_REQUIREMENTS_DIR.from(environmentVariables, "features");
+            reload();
             tagProviders = ImmutableSet.of(
-                    new MultiContextFileSystemTagProvider(rootDirectory, 0),
+                    requirementsTagProviderDelegator,
                     new InjectedTagProvider(environmentVariables),
                     new ContextTagProvider());
         }
         return tagProviders;
+    }
+
+    private static void reload() {
+        String rootDirectory = ThucydidesSystemProperty.THUCYDIDES_REQUIREMENTS_DIR.from(environmentVariables, "features");
+        requirementsTagProviderDelegator.setDelegate(newMultContextProvider(rootDirectory));
+    }
+
+    private static MultiContextFileSystemTagProvider newMultContextProvider(String rootDirectory) {
+        return new MultiContextFileSystemTagProvider(rootDirectory, 0);
     }
 
     @Override

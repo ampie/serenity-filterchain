@@ -56,6 +56,7 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
         this.parentRequirementName = humanize(LastElement.of(path));
     }
 
+
     @Override
     public List<Requirement> getRequirements() {
         //This will initialize the entire tree available in the feature/story files, but not the context-specific layer
@@ -126,6 +127,9 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
 
     private String parentRequirementKey(TestOutcome testOutcome) {
         String path = testOutcome.getUserStory().getPath();
+        if(path.lastIndexOf('/')==-1){
+            return "non-existing";
+        }
         path = path.substring(0, path.lastIndexOf('/'));
         String grandParentRequirementName = humanize(path.substring(path.lastIndexOf('/') + 1));
         String result = grandParentRequirementName + "/" + decontextualizedStoryName(testOutcome);
