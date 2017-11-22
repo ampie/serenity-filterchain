@@ -33,6 +33,7 @@ public class RequirementsTaggingProcessor extends AbstractModifier {
             effectiveTags.add(result.getFeatureTag().get());
         }
         result.setTags(effectiveTags);
+        result.addIssues(Contextualizer.extractIssuesFor(effectiveTags, testOutcome.getContext()));
         return result;
     }
 

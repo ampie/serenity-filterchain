@@ -127,7 +127,7 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
 
     private String parentRequirementKey(TestOutcome testOutcome) {
         String path = testOutcome.getUserStory().getPath();
-        if(path.lastIndexOf('/')==-1){
+        if (path.lastIndexOf('/') == -1) {
             return "non-existing";
         }
         path = path.substring(0, path.lastIndexOf('/'));
@@ -144,6 +144,19 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
         return ((StringUtils.isNotEmpty(child.getParent())) ? child.getParent() + "/" + child.getName() : child.getName()).toLowerCase();
     }
 
+    @Override
+    public Set<TestTag> getTagsFor(TestOutcome testOutcome) {
+        Set<TestTag> tags = super.getTagsFor(testOutcome);
+//       TODO this is required because of the way we generate the cucumber json file in WireMock - it doesn't take the Feature tags into account.
+// Solution1: generate the serenity json files from wiremock.
+        //Solution 2: fix the tags inside WireMock
+        File file = new File(testOutcome.getUserStory().getPath());
+        if (this.requirementTagMap.containsKey(file.getName())) {
+            tags.addAll(this.requirementTagMap.get(file.getName()));
+        }
+        return tags;
+    }
+
     private String determineCardNumber(TestOutcome testOutcome, Requirement parentRequirement) {
         String cardNumber = null;
         List<TestTag> parentTags = this.requirementTagMap.get(parentRequirement.getFeatureFileName());
@@ -153,6 +166,7 @@ public class MultiContextFileSystemTagProvider extends FileSystemRequirementsTag
                 cardNumber = issuesForContext.get(0);
             }
         }
+
         return cardNumber;
     }
 

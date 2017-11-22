@@ -50,7 +50,6 @@ public class JiraUpdatingProcessor implements ProcessingStrategy {
     @Override
     public List<TestOutcome> process(List<TestOutcome> source) {
         System.out.println("jiraUpdater.shouldUpdateIssues():" + jiraUpdater.shouldUpdateIssues());
-
         if (jiraUpdater.shouldUpdateIssues()) {
             TestResultTally<TestOutcomeSummary> resultTally = new TestResultTally<TestOutcomeSummary>();
             Set<String> allIssues = new HashSet<>();

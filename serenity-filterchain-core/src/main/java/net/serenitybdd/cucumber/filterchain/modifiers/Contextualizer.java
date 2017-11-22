@@ -94,14 +94,14 @@ public class Contextualizer {
     }
 
     public static List<String> extractIssuesFor(Collection<TestTag> tags, String context) {
+        System.out.println("tags:" + tags);
         List<String> issues = new ArrayList<>();
         if (context != null) {
             for (TestTag tag : tags) {
                 if (tag.getName().startsWith(context) || tag.getName().startsWith("@" + context)) {
                     Matcher matcher = Pattern.compile("((?<!([A-Z]{1,10})-?)[A-Z]+-\\d+)").matcher(tag.getName());
-                    System.out.println("Tag: " + tag.getName());
                     if(matcher.find()) {
-                    System.out.println("matcher.find(): true");
+                        System.out.println("matcher.find(): true");
                         issues.add("#" + matcher.group());
                     }
                 }
