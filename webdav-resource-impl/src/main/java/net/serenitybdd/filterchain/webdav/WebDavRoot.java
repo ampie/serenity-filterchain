@@ -15,7 +15,6 @@ public class WebDavRoot extends WebDavFolder implements ResourceRoot {
         this.rootName = rootName;
         this.config = config;
         this.sardine = SardineFactory.begin(config.getUsername(), config.getPassword());
-
     }
     public String getWebDavUrl(){
         String baseUrl = config.getBaseUrl();

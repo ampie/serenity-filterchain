@@ -9,8 +9,8 @@ buildscript {
 
     dependencies {
         classpath('net.serenity-bdd:serenity-filterchain-gradle-plugin:0.0.1')
-        classpath('net.serenity-bdd:webdav-resource-impl:0.0.1')
-        classpath('com.sbg.bdd:serenity-cucumber-adaptor:0.0.5')
+        classpath('net.serenity-bdd:webdav-resource-impl:0.0.5')
+        classpath('com.sbg.bdd:serenity-cucumber-adaptor:0.2.13')
     }
 }
 
